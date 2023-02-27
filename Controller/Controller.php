@@ -1,6 +1,6 @@
 <?php
 
-namespace veiculo\Controller;
+namespace CadastroVeiculos\Controller;
 
 abstract class Controller
 {

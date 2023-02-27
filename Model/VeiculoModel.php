@@ -1,12 +1,12 @@
 <?php
 
-namespace veiculo\Model;
+namespace CadastroVeiculos\Model;
 
-use veiculo\DAO\VeiculoDAO;
+use CadastroVeiculos\DAO\VeiculoDAO;
 
 class VeiculoModel extends Model
 {
-    public $Id, $Id_Marca, $Modelo, $Id_Fabricante, $Id_Tipo, $Ano, $Id_Combustivel, $Cor, $NumeroChassi, $Kilometragem, $Revisao,
+    public $Id, $Id_Marca, $Modelo, $Id_Fabricante, $Id_Tipo, $Id_Combustivel, $Ano, $Cor, $NumeroChassi, $Kilometragem, $Revisao,
     $Sinistro, $Roubo_Furto, $Aluguel, $Venda, $Particular, $Observacoes;
 
     public $rows;

@@ -1,8 +1,8 @@
 <?php
 
-namespace veiculo\DAO;
+namespace CadastroVeiculos\DAO;
 
-use veiculo\Model\VeiculoModel;
+use CadastroVeiculos\Model\VeiculoModel;
 
 use \PDO;
 
@@ -16,19 +16,19 @@ class VeiculoDAO extends DAO
 
     function insert(VeiculoModel $model)
     {
-        $sql = "INSERT INTO veiculo
-                (Id_Marca, Modelo, Id_Fabricante, Id_Tipo, Ano, Id_Combustivel, 
+        $sql = "INSERT INTO Veiculo
+                (Id_Marca, Id_Fabricante, Id_Tipo, Id_Combustivel, Modelo, Ano, 
                  Cor, NumeroChassi, Kilometragem, Revisao, Sinistro, Roubo_Furto, Aluguel, Venda, Particular, Observacoes)
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->Id_Marca);
-        $stmt->bindValue(2, $model->Modelo);
-        $stmt->bindValue(3, $model->Id_Fabricante);
-        $stmt->bindValue(4, $model->Id_Tipo);
-        $stmt->bindValue(5, $model->Ano);
-        $stmt->bindValue(6, $model->Id_Combustivel);
+        $stmt->bindValue(2, $model->Id_Fabricante);
+        $stmt->bindValue(3, $model->Id_Tipo);
+        $stmt->bindValue(4, $model->Id_Combustivel);
+        $stmt->bindValue(5, $model->Modelo);
+        $stmt->bindValue(6, $model->Ano);
         $stmt->bindValue(7, $model->Cor);
         $stmt->bindValue(8, $model->NumeroChassi);
         $stmt->bindValue(9, $model->Kilometragem);
@@ -46,30 +46,34 @@ class VeiculoDAO extends DAO
 
     public function update(VeiculoModel $model)
     {
-        $sql = "UPDATE veiculo SET Modelo=?, Ano=?, Cor=?, NumeroChassi=?, Kilometragem=?, Revisao=?, Sinistro=?, Roubo_Furto=?,
-         Aluguel=?, Venda=?, Particular=?, Observacoes=? WHERE id=? ";
+        $sql = "UPDATE Veiculo SET Id_Marca=?, Id_Fabricante=?, Id_Tipo=?, Id_Combustivel=?, Modelo=?, Ano=?, Cor=?, NumeroChassi=?, Kilometragem=?, Revisao=?, Sinistro=?, Roubo_Furto=?,
+         Aluguel=?, Venda=?, Particular=?, Observacoes=? WHERE Id=? ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->Modelo);
-        $stmt->bindValue(2, $model->Ano);
-        $stmt->bindValue(3, $model->Cor);
-        $stmt->bindValue(4, $model->NumeroChassi);
-        $stmt->bindValue(5, $model->Kilometragem);
-        $stmt->bindValue(6, $model->Revisao);
-        $stmt->bindValue(7, $model->Sinistro);
-        $stmt->bindValue(8, $model->Roubo_Furto);
-        $stmt->bindValue(9, $model->Aluguel);
-        $stmt->bindValue(10, $model->Venda);
-        $stmt->bindValue(11, $model->Particular);
-        $stmt->bindValue(12, $model->Observacoes);
+        $stmt->bindValue(1, $model->Id_Marca);
+        $stmt->bindValue(2, $model->Id_Fabricante);
+        $stmt->bindValue(3, $model->Id_Tipo);
+        $stmt->bindValue(4, $model->Id_Combustivel);
+        $stmt->bindValue(5, $model->Modelo);
+        $stmt->bindValue(6, $model->Ano);
+        $stmt->bindValue(7, $model->Cor);
+        $stmt->bindValue(8, $model->NumeroChassi);
+        $stmt->bindValue(9, $model->Kilometragem);
+        $stmt->bindValue(10, $model->Revisao);
+        $stmt->bindValue(11, $model->Sinistro);
+        $stmt->bindValue(12, $model->Roubo_Furto);
+        $stmt->bindValue(13, $model->Aluguel);
+        $stmt->bindValue(14, $model->Venda);
+        $stmt->bindValue(15, $model->Particular);
+        $stmt->bindValue(16, $model->Observacoes);
 
-        $stmt->bindValue(13, $model->Id);
+        $stmt->bindValue(17, $model->Id);
         $stmt->execute();
     }
 
     public function select()
     {
-        $sql = "SELECT * FROM veiculo";
+        $sql = "SELECT * FROM Veiculo";
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS);
@@ -79,10 +83,10 @@ class VeiculoDAO extends DAO
     {
         include_once 'Model/VeiculoModel.php';
 
-        $sql = "SELECT * FROM veiculo WHERE Id = ?";
+        $sql = "SELECT * FROM Veiculo WHERE Id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(17, $Id);
         $stmt->execute();
 
         return $stmt->fetchObject("VeiculoModel"); 
@@ -90,10 +94,10 @@ class VeiculoDAO extends DAO
 
     public function delete(int $Id)
     {
-        $sql = "DELETE FROM veiculo WHERE Id = ? ";
+        $sql = "DELETE FROM Veiculo WHERE Id = ? ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(17, $Id);
         $stmt->execute();
     }
 }

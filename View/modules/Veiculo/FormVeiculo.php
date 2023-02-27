@@ -17,22 +17,14 @@
         <fieldset>
             <legend> Cadastro de Usuários </legend>
 
-            <input type="hidden" value="<?= $model->id ?>" name="id" />
+            <input type="hidden" value="<?= $model->Id ?>" name="Id" />
 
-            <label for="nome"> Nome: </label>
-            <input type="text" name="nome" id="nome" value="<?= $model->nome ?>" />
-
-            <br> <br>
-
-            <label for="email"> Email: </label>
-            <input type="text" name="email" id="email" value="<?= $model->email ?>" />
+            <label for="Modelo"> Modelo: </label>
+            <input type="text" name="Modelo" Id="Modelo" value="<?= $model->Modelo ?>" />
 
             <br> <br>
 
-            <label for="senha"> Senha: </label>
-            <input type="password" name="senha" id="senha" value="<?= $model->senha ?>" />
-
-            <br> <br>
+            
 
             <button type="submit"> Enviar: </button>
         </fieldset>

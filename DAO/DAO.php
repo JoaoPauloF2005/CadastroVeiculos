@@ -1,6 +1,6 @@
 <?php
 
-namespace veiculo\DAO;
+namespace CadastroVeiculos\DAO;
 
 use \PDO;
 

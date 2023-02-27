@@ -1,8 +1,8 @@
 <?php
 
-namespace veiculo\Controller;
+namespace CadastroVeiculos\Controller;
 
-use veiculo\Model\VeiculoModel;
+use CadastroVeiculos\Model\VeiculoModel;
 
 class VeiculoController extends Controller
 {
@@ -12,7 +12,7 @@ class VeiculoController extends Controller
 
         $model = new VeiculoModel();
         $model->getAllRows();
-        include 'View/modules/Veiculo/ListaVeiculo.php';
+        include 'View/modules/Veiculo/FormVeiculo.php';
     }
 
     public static function form()
@@ -28,26 +28,26 @@ class VeiculoController extends Controller
     public static function save()
     {
         include 'Model/VeiculoModel.php';
-        $veiculo = new VeiculoModel();
-        $veiculo->Id = $_POST['Id'];
-        $veiculo->Id_Marca = $_POST['Id_Marca'];
-        $veiculo->Modelo = $_POST['Modelo'];
-        $veiculo->Id_Fabricante = $_POST['Id_Fabricante'];
-        $veiculo->Id_Tipo = $_POST['Id_Tipo'];
-        $veiculo->Ano = $_POST['Ano'];
-        $veiculo->Id_Combustivel = $_POST['Id_Combustivel'];
-        $veiculo->Cor = $_POST['Cor'];
-        $veiculo->NumeroChassi = $_POST ['NumeroChassi'];
-        $veiculo->Kilometragem = $_POST ['Kilometragem'];
-        $veiculo->Revisao = $_POST ['Revisao'];
-        $veiculo->Sinistro = $_POST ['Sinistro'];
-        $veiculo->Roubo_Furto = $_POST ['Roubo_Furto'];
-        $veiculo->Aluguel = $_POST ['Aluguel'];
-        $veiculo->Venda = $_POST ['Venda'];
-        $veiculo->Particular = $_POST ['Particular'];
-        $veiculo->Observacoes = $_POST ['Observacoes'];
+        $Veiculo = new VeiculoModel();
+        $Veiculo->Id = $_POST['Id'];
+        $Veiculo->Id_Marca = $_POST['Id_Marca'];
+        $Veiculo->Modelo = $_POST['Modelo'];
+        $Veiculo->Id_Fabricante = $_POST['Id_Fabricante'];
+        $Veiculo->Id_Tipo = $_POST['Id_Tipo'];
+        $Veiculo->Id_Combustivel = $_POST['Id_Combustivel'];
+        $Veiculo->Ano = $_POST['Ano'];
+        $Veiculo->Cor = $_POST['Cor'];
+        $Veiculo->NumeroChassi = $_POST ['NumeroChassi'];
+        $Veiculo->Kilometragem = $_POST ['Kilometragem'];
+        $Veiculo->Revisao = $_POST ['Revisao'];
+        $Veiculo->Sinistro = $_POST ['Sinistro'];
+        $Veiculo->Roubo_Furto = $_POST ['Roubo_Furto'];
+        $Veiculo->Aluguel = $_POST ['Aluguel'];
+        $Veiculo->Venda = $_POST ['Venda'];
+        $Veiculo->Particular = $_POST ['Particular'];
+        $Veiculo->Observacoes = $_POST ['Observacoes'];
 
-        $veiculo->save();
+        $Veiculo->save();
 
         header("Location: /veiculo");
 
