@@ -1,0 +1,96 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2023-02-26 21:04
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: famil
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+CREATE SCHEMA IF NOT EXISTS `db_mvc` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+
+CREATE TABLE IF NOT EXISTS `db_mvc`.`combustivel` (
+  `Id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Combustivel` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `db_mvc`.`fabricante` (
+  `Id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Fabricante` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `db_mvc`.`marca` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Marca` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `db_mvc`.`tipo` (
+  `Id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Tipo` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+CREATE TABLE IF NOT EXISTS `db_mvc`.`veiculo` (
+  `Id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Id_Marca` INT(11) NOT NULL,
+  `Modelo` VARCHAR(45) NOT NULL,
+  `Id_Fabricante` INT(11) NOT NULL,
+  `Id_Tipo` INT(11) NOT NULL,
+  `Ano` DATE NOT NULL,
+  `Id_Combustivel` INT(11) NOT NULL,
+  `Cor` VARCHAR(45) NOT NULL,
+  `NumeroChassi` VARCHAR(45) NOT NULL,
+  `Kilometragem` VARCHAR(45) NOT NULL,
+  `Revisão` VARCHAR(45) NOT NULL,
+  `Sinistro` VARCHAR(45) NOT NULL,
+  `Roubo_Furto` VARCHAR(45) NOT NULL,
+  `Aluguel` VARCHAR(45) NOT NULL,
+  `Venda` VARCHAR(45) NOT NULL,
+  `Particular` VARCHAR(45) NOT NULL,
+  `Observacoes` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`Id`),
+  INDEX `fk_Veiculo_Marca_idx` (`Id_Marca` ASC) VISIBLE,
+  INDEX `fk_Veiculo_Fabricante_idx` (`Id_Fabricante` ASC) VISIBLE,
+  INDEX `fk_Veiculo_Tipo_idx` (`Id_Tipo` ASC) VISIBLE,
+  INDEX `fk_Veiculo_Combustivel_idx` (`Id_Combustivel` ASC) VISIBLE,
+  CONSTRAINT `fk_Veiculo_Combustivel`
+    FOREIGN KEY (`Id_Combustivel`)
+    REFERENCES `db_mvc`.`combustivel` (`Id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+  CONSTRAINT `fk_Veiculo_Fabricante`
+    FOREIGN KEY (`Id_Fabricante`)
+    REFERENCES `db_mvc`.`fabricante` (`Id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+  CONSTRAINT `fk_Veiculo_Marca`
+    FOREIGN KEY (`Id_Marca`)
+    REFERENCES `db_mvc`.`marca` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+  CONSTRAINT `fk_Veiculo_Tipo`
+    FOREIGN KEY (`Id_Tipo`)
+    REFERENCES `db_mvc`.`tipo` (`Id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
