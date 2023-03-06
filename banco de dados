@@ -1,32 +1,32 @@
-CREATE DATABASE db_mvc;
+CREATE DATABASE db_CadastroVeiculo;
 
-use db_mvc;
+use db_CadastroVeiculo;
 
 CREATE TABLE Marca
 (
   Id int auto_increment,
-  Marca varchar(45) not null,
+  nome varchar(45) not null,
   primary key(Id)
 );
 
 CREATE TABLE Fabricante
 (
    Id int auto_increment,
-   Fabricante varchar(45) not null,
+   nome varchar(45) not null,
    primary key (Id)
 );
 
 CREATE TABLE Tipo
 (
   Id int auto_increment,
-  Tipo varchar(45) not null,
+  nome varchar(45) not null,
   primary key (Id)
 );
 
 CREATE TABLE Combustivel 
 (
   Id int auto_increment,
-  Combustivel varchar(45) not null,
+  nome varchar(45) not null,
   primary key (Id)
 );
 
@@ -40,15 +40,15 @@ CREATE TABLE Veiculo
   Modelo varchar(45) not null,
   Ano int not null,
   Cor varchar(45) not null,
-  NumeroChassi varchar(100) not null unique,
-  Kilometragem double not null, 
+  NumeroChassi varchar(17) not null,
+  Kilometragem char(150) not null, 
   Revisao boolean,
   Sinistro boolean, 
   Roubo_Furto boolean,
   Aluguel boolean,
   Venda boolean,
   Particular boolean,
-  Observacoes varchar(100) not null,
+  Observacoes varchar(300) not null,
   primary key (Id),
   foreign key (Id_Marca) references Marca(Id),
   foreign key (Id_Fabricante) references Fabricante(Id),
