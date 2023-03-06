@@ -3,26 +3,27 @@
 namespace CadastroVeiculos\Controller;
 
 use CadastroVeiculos\Model\VeiculoModel;
+use CadastroVeiculos\Controller\Controller;
 
 class VeiculoController extends Controller
 {
     public static function index()
     {
-        include 'Model/VeiculoModel.php';
+        
 
         $model = new VeiculoModel();
         $model->getAllRows();
-        include 'View/modules/Veiculo/FormVeiculo.php';
+        parent::render( 'Veiculo/FormVeiculo.php', $model);
     }
 
     public static function form()
     {
-        include 'Model/VeiculoModel.php';
         $model = new VeiculoModel();
 
         if(isset($_GET['Id']))
         $model = $model->getById( (int) $_GET['Id']);
-        include 'View/modules/Veiculo/FormVeiculo.php';
+        
+        parent::render( 'Veiculo/FormVeiculo.php', $model);
     }
 
     public static function save()
