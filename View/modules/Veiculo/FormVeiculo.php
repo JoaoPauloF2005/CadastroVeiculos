@@ -5,12 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Veículos</title>
-    <style>
-        label, input { display: block;}
-        body{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    </style>
+    
 </head>
 <body>
 
@@ -21,18 +16,30 @@
         
         <h2>Cadastro de Veículos</h2>
 
-        <input type="hidden" value="<?= $model->id ?>" name="id"> 
+        <input type="hidden" value="<?= $model->id ?>" name="Id"> 
 
         <label for="marca">Marca:</label>
         <select name="marca">
-            <?php foreach($model->lista_marca as $marca):?>
-                <option value="<?= $marca['id']?>" <?= ($marca['id'] == $model->id_Marca) ? 'selected' : " " ?> >
-                    <?= $marca['nome'] ?>
+            <?php foreach($model->Lista_Marca as $Marca):?>
+                <option value="<?= $Marca['id']?>" <?= ($Marca['id'] == $model->Id_Marca) ? 'selected' : " " ?> >
+                    <?= $Marca['nome'] ?>
                 </option>
             <?php endforeach ?>
         </select>
 
-        <label for="data">Ano Fabricado:</label>
-        <input name="ano_fabricado" id="ano_fabricado" type="date" value="<?= $model->ano_fabricado ?>" >
+        <label for="Fabricante">Fabricante:</label>
+        <select name="Fabricante">
+            <?php foreach($model->Lista_Fabricante as $Fabricante):?>
+                <option value="<?= $Fabricante['Id']?>" <?= ($Fabricante['Id'] == $model->Id_Fabricante) ? 'selected' : " " ?> >
+                    <?= $Fabricante['nome'] ?>
+                </option>
+            <?php endforeach ?>
+        </select>
+
+        <label for="Modelo">Modelo:</label>
+        <imput name="Modelo" Id="Modelo" type="text" value="<?= $model->Modelo ?>" >
+
+        <label for="Ano ">Ano Fabricado:</label>
+        <input name="Ano" Id="Ano" type="date" value="<?= $model->Ano ?>" >
 </body>
 </html>

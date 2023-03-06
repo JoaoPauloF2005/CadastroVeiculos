@@ -9,11 +9,9 @@ class VeiculoController extends Controller
 {
     public static function index()
     {
-        
-
         $model = new VeiculoModel();
         $model->getAllRows();
-        parent::render( 'Veiculo/FormVeiculo.php', $model);
+        parent::render( 'Veiculo/ListaVeiculo.php', $model);
     }
 
     public static function form()
@@ -23,7 +21,7 @@ class VeiculoController extends Controller
         if(isset($_GET['Id']))
         $model = $model->getById( (int) $_GET['Id']);
         
-        parent::render( 'Veiculo/FormVeiculo.php', $model);
+        parent::render( 'Veiculo/FormVeiculo', $model);
     }
 
     public static function save()

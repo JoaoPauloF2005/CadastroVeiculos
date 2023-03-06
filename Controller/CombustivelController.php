@@ -20,8 +20,8 @@ class CombustivelController extends Controller
     {
         $model = new CombustivelModel();
 
-        if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['id']);
+        if(isset($_GET['Id']))
+            $model = $model->getById( (int) $_GET['Id']);
 
         parent::render('Combustivel/FormCombustivel', $model);
     }
@@ -30,7 +30,7 @@ class CombustivelController extends Controller
     {
         $marca = new CombustivelModel();
 
-        $marca->Id = $_POST['id'];
+        $marca->Id = $_POST['Id'];
         $marca->nome = $_POST['nome'];
 
         $marca->save();
@@ -42,7 +42,7 @@ class CombustivelController extends Controller
     {
         $model = new CombustivelModel();
 
-        $model->delete( (int) $_GET['id']);
+        $model->delete( (int) $_GET['Id']);
 
         header("Location: /combustivel");
     }

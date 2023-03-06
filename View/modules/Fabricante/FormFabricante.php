@@ -11,9 +11,9 @@
 </head>
 <body>
 
-    <form action="/combustivel/save" method="post">
+    <form action="/fabricante/save" method="post">
 
-        <h1> Cadastro de Combustivel </h1>
+        <h1> Cadastro de Fabricante </h1>
 
         <div class="box">
             <div class="container">

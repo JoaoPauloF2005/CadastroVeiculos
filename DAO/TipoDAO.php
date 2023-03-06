@@ -2,19 +2,19 @@
 
 namespace CadastroVeiculos\DAO;
 
-use CadastroVeiculos\Model\FabricanteModel;
+use CadastroVeiculos\Model\TipoModel;
 use \PDO;
 
-class FabricanteDAO extends DAO
+class TipoDAO extends DAO
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function insert(FabricanteModel $model)
+    public function insert(TipoModel $model)
     {
-        $sql = "INSERT INTO Fabricante (nome) VALUE (?)";
+        $sql = "INSERT INTO Tipo (nome) VALUE (?)";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -23,9 +23,9 @@ class FabricanteDAO extends DAO
         $stmt->execute();
     }
 
-    public function update(FabricanteModel $model)
+    public function update(TipoModel $model)
     {
-        $sql = "UPDATE Fabricante SET nome=? WHERE Id=?";
+        $sql = "UPDATE Tipo SET nome=? WHERE Id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
@@ -35,7 +35,7 @@ class FabricanteDAO extends DAO
 
     public function select()
     {
-        $sql = "SELECT * FROM Fabricante";
+        $sql = "SELECT * FROM Tipo";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -46,18 +46,18 @@ class FabricanteDAO extends DAO
 
     public function selectById(int $Id)
     {
-        $sql = "SELECT * FROM Fabricante WHERE Id = ?";
+        $sql = "SELECT * FROM Tipo WHERE Id = ?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $Id);
         $stmt->execute();
 
-        return $stmt->fetchObject("CadastroVeiculos\Model\FabricanteModel");
+        return $stmt->fetchObject("CadastroVeiculos\Model\TipoModel");
     }
 
     public function delete(int $Id)
     {
-        $sql = "DELETE FROM Fabricante WHERE Id = ?";
+        $sql = "DELETE FROM Tipo WHERE Id = ?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $Id);
