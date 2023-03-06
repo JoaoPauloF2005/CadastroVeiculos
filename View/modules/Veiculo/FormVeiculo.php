@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-    <title>Formulário de Usuários</title>
+    <title>Cadastro de Veículos</title>
+    <style>
+        label, input { display: block;}
+        body{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    </style>
 </head>
-
 <body>
-<form action="/veiculo/save" method="post">
+
+    <form action="/veiculo/save" method="post">
 
 
+    <div class="container">
+        
+        <h2>Cadastro de Veículos</h2>
 
-        <fieldset>
-            <legend> Cadastro de Usuários </legend>
+        <input type="hidden" value="<?= $model->id ?>" name="id"> 
 
-            <input type="hidden" value="<?= $model->Id ?>" name="Id" />
+        <label for="marca">Marca:</label>
+        <select name="marca">
+            <?php foreach($model->lista_marca as $marca):?>
+                <option value="<?= $marca['id']?>" <?= ($marca['id'] == $model->id_Marca) ? 'selected' : " " ?> >
+                    <?= $marca['nome'] ?>
+                </option>
+            <?php endforeach ?>
+        </select>
 
-            <label for="Modelo"> Modelo: </label>
-            <input type="text" name="Modelo" Id="Modelo" value="<?= $model->Modelo ?>" />
-
-            <br> <br>
-
-            
-
-            <button type="submit"> Enviar: </button>
-        </fieldset>
-    </form>
+        <label for="data">Ano Fabricado:</label>
+        <input name="ano_fabricado" id="ano_fabricado" type="date" value="<?= $model->ano_fabricado ?>" >
 </body>
 </html>
