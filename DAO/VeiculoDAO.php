@@ -66,14 +66,21 @@ class VeiculoDAO extends DAO
         $stmt->bindValue(14, $model->Venda);
         $stmt->bindValue(15, $model->Particular);
         $stmt->bindValue(16, $model->Observacoes);
-
         $stmt->bindValue(17, $model->Id);
         $stmt->execute();
     }
 
     public function select()
     {
-        $sql = "SELECT * FROM Veiculo";
+        $sql = "SELECT v.Id, v.Modelo, v.Ano, v.Cor, v.NumeroChassi, v.Kilometragem, v.Revisao, v.Sinistro, 
+        v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
+        m.nome AS Marca, f.nome AS Fabricante, t.nome AS Tipo, c.nome AS Combustivel
+        FROM Veiculo v
+        JOIN Marca m ON (m.Id = v.Id_Marca)
+        JOIN Fabricante f ON (f.Id = v.Id_Fabricante)
+        JOIN TipoDeVeiculo t ON (t.Id = v.Id_TipoDeVeiculo)
+        JOIN Combustivel c ON (c.Id = v.Id_Combustivel)";
+
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS);
@@ -81,15 +88,22 @@ class VeiculoDAO extends DAO
 
     public function selectById(int $Id)
     {
-        include_once 'Model/VeiculoModel.php';
-
-        $sql = "SELECT * FROM Veiculo WHERE Id = ?";
+        $sql = "SELECT v.Id, v.Modelo, v.Ano, v.Cor, v.NumeroChassi, v.Kilometragem, v.Revisao, v.Sinistro, 
+        v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
+        m.nome AS Marca, f.nome AS Fabricante, t.nome AS Tipo, c.nome AS Combustivel
+        FROM Veiculo v
+        JOIN Marca m ON (m.Id = v.Id_Marca)
+        JOIN Fabricante f ON (f.Id = v.Id_Fabricante)
+        JOIN TipoDeVeiculo t ON (t.Id = v.Id_TipoDeVeiculo)
+        JOIN Combustivel c ON (c.Id = v.Id_Combustivel)
+        WHERE v.Id=?";
+                
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(17, $Id);
+        $stmt->bindValue(1, $Id);
         $stmt->execute();
 
-        return $stmt->fetchObject("VeiculoModel"); 
+        return $stmt->fetchObject("CadastroVeiculos\ModelVeiculoModel"); 
     }
 
     public function delete(int $Id)
@@ -97,7 +111,7 @@ class VeiculoDAO extends DAO
         $sql = "DELETE FROM Veiculo WHERE Id = ? ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(17, $Id);
+        $stmt->bindValue(1, $Id);
         $stmt->execute();
     }
 }
