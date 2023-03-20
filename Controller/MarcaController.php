@@ -28,12 +28,12 @@ class MarcaController extends Controller
 
     public static function save()
     {
-        $marca = new MarcaModel();
+        $Marca = new MarcaModel();
 
-        $marca->id = $_POST['id'];
-        $marca->nome = $_POST['nome'];
+        $Marca->id = $_POST['id'];
+        $Marca->nome = $_POST['nome'];
 
-        $marca->save();
+        $Marca->save();
 
         header("Location: /marca");
     }

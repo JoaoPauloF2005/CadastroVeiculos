@@ -36,7 +36,7 @@ class VeiculoModel extends Model
     {
        
         $dao = new MarcaDAO();
-        $this->rows = $dao->select();
+       return $dao->select();
     }
 
     public function getAllFabricante()

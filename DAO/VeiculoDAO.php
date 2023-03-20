@@ -78,7 +78,7 @@ class VeiculoDAO extends DAO
         FROM Veiculo v
         JOIN Marca m ON (m.id = v.id_Marca)
         JOIN Fabricante f ON (f.id = v.id_Fabricante)
-        JOIN TipoDeVeiculo t ON (t.id = v.id_TipoDeVeiculo)
+        JOIN Tipo t ON (t.id = v.id_Tipo)
         JOIN Combustivel c ON (c.id = v.id_Combustivel)";
 
         $stmt = $this->conexao->prepare($sql);
@@ -94,7 +94,7 @@ class VeiculoDAO extends DAO
         FROM Veiculo v
         JOIN Marca m ON (m.id = v.id_Marca)
         JOIN Fabricante f ON (f.id = v.id_Fabricante)
-        JOIN TipoDeVeiculo t ON (t.id = v.id_TipoDeVeiculo)
+        JOIN Tipo t ON (t.id = v.id_Tipo)
         JOIN Combustivel c ON (c.id = v.id_Combustivel)
         WHERE v.id=?";
                 

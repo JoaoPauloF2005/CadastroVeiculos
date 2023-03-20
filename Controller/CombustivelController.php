@@ -28,12 +28,12 @@ class CombustivelController extends Controller
 
     public static function save()
     {
-        $combustivel = new CombustivelModel();
+        $Combustivel = new CombustivelModel();
 
-        $combustivel->id = $_POST['id'];
-        $combustivel->nome = $_POST['nome'];
+        $Combustivel->id = $_POST['id'];
+        $Combustivel->nome = $_POST['nome'];
 
-        $combustivel->save();
+        $Combustivel->save();
 
         header("Location: /combustivel");
     }

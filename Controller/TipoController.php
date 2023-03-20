@@ -28,12 +28,12 @@ class TipoController extends Controller
 
     public static function save()
     {
-        $tipo = new TipoModel();
+        $Tipo = new TipoModel();
 
-        $tipo->id = $_POST['id'];
-        $tipo->nome = $_POST['nome'];
+        $Tipo->id = $_POST['id'];
+        $Tipo->nome = $_POST['nome'];
 
-        $tipo->save();
+        $Tipo->save();
 
         header("Location: /tipo");
     }

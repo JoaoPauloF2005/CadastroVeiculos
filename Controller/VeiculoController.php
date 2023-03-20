@@ -19,10 +19,10 @@ class VeiculoController extends Controller
         $model = new VeiculoModel();
 
         if(isset($_GET['id']))
-        $model = $model->getByid( (int) $_GET['id']);
+        $model = $model->getById( (int) $_GET['id']);
 
         $model->Lista_Marca = $model->getAllMarca();
-        $model->Lista_fabricante = $model->getAllFabricante();
+        $model->Lista_Fabricante = $model->getAllFabricante();
         $model->Lista_Tipo = $model->getAllTipo();
         $model->Lista_Combustivel = $model->getAllCombustivel();
         
@@ -31,7 +31,7 @@ class VeiculoController extends Controller
 
     public static function save()
     {
-        include 'Model/VeiculoModel.php';
+        
         $Veiculo = new VeiculoModel();
         $Veiculo->id = $_POST['id'];
         $Veiculo->Modelo = $_POST['Modelo'];
@@ -51,7 +51,7 @@ class VeiculoController extends Controller
         $Veiculo->id_Tipo = $_POST['Tipo'];
         $Veiculo->id_Combustivel = $_POST['Combustivel'];
 
-        $veiculo->save();
+        $Veiculo->save();
 
         header("Location: /veiculo");
 
@@ -59,7 +59,6 @@ class VeiculoController extends Controller
 
     public static function delete()
     {
-        include 'Model/VeiculoModel.php';
 
         $model = new VeiculoModel();
 

@@ -28,12 +28,12 @@ class FabricanteController extends Controller
 
     public static function save()
     {
-        $fabricante = new FabricanteModel();
+        $Fabricante = new FabricanteModel();
 
-        $fabricante->id = $_POST['id'];
-        $fabricante->nome = $_POST['nome'];
+        $Fabricante->id = $_POST['id'];
+        $Fabricante->nome = $_POST['nome'];
 
-        $fabricante->save();
+        $Fabricante->save();
 
         header("Location: /fabricante");
     }
