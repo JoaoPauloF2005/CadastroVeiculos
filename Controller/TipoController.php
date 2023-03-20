@@ -20,20 +20,20 @@ class TipoController extends Controller
     {
         $model = new TipoModel();
 
-        if(isset($_GET['Id']))
-            $model = $model->getById( (int) $_GET['Id']);
+        if(isset($_GET['id']))
+            $model = $model->getById( (int) $_GET['id']);
 
         parent::render('Tipo/FormTipo', $model);
     }
 
     public static function save()
     {
-        $marca = new TipoModel();
+        $tipo = new TipoModel();
 
-        $marca->Id = $_POST['Id'];
-        $marca->nome = $_POST['nome'];
+        $tipo->id = $_POST['id'];
+        $tipo->nome = $_POST['nome'];
 
-        $marca->save();
+        $tipo->save();
 
         header("Location: /tipo");
     }
@@ -42,7 +42,7 @@ class TipoController extends Controller
     {
         $model = new TipoModel();
 
-        $model->delete( (int) $_GET['Id']);
+        $model->delete( (int) $_GET['id']);
 
         header("Location: /tipo");
     }

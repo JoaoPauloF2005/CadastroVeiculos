@@ -25,7 +25,7 @@ class MarcaDAO extends DAO
 
     public function update(MarcaModel $model)
     {
-        $sql = "UPDATE Marca SET nome=? WHERE Id=?";
+        $sql = "UPDATE Marca SET nome=? WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
@@ -44,23 +44,23 @@ class MarcaDAO extends DAO
         return $stmt->fetchAll();
     }
 
-    public function selectById(int $Id)
+    public function selectById(int $id)
     {
-        $sql = "SELECT * FROM Marca WHERE Id = ?";
+        $sql = "SELECT * FROM Marca WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
 
         return $stmt->fetchObject("CadastroVeiculos\Model\MarcaModel");
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
-        $sql = "DELETE FROM Marca WHERE Id = ?";
+        $sql = "DELETE FROM Marca WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
     }
 }

@@ -16,30 +16,33 @@
         
         <h2>Cadastro de Veículos</h2>
 
-        <input type="hidden" value="<?= $model->id ?>" name="Id"> 
+        <input type="hidden" value="<?= $model->id ?>" name="id"> 
 
-        <label for="marca">Marca:</label>
-        <select name="marca">
-            <?php foreach($model->Lista_Marca as $Marca):?>
-                <option value="<?= $Marca['id']?>" <?= ($Marca['id'] == $model->Id_Marca) ? 'selected' : " " ?> >
-                    <?= $Marca['nome'] ?>
+        <label for="Marca">Marca:</label>
+        <select name="Marca">
+            <?php foreach($model->Lista_Marca as $marca):?>
+                <option value="<?= $marca['id']?>" <?= ($marca['id'] == $model->id_Marca) ? 'selected' : " " ?> >
+                    <?= $marca['nome'] ?>
                 </option>
             <?php endforeach ?>
         </select>
 
+        <label for="modelo">Modelo:</label>
+            <input name="modelo" id="modelo" type="text" class="form-control" value="<?= $model->modelo ?>">
+
         <label for="Fabricante">Fabricante:</label>
         <select name="Fabricante">
             <?php foreach($model->Lista_Fabricante as $Fabricante):?>
-                <option value="<?= $Fabricante['Id']?>" <?= ($Fabricante['Id'] == $model->Id_Fabricante) ? 'selected' : " " ?> >
+                <option value="<?= $Fabricante['id']?>" <?= ($Fabricante['id'] == $model->id_Fabricante) ? 'selected' : " " ?> >
                     <?= $Fabricante['nome'] ?>
                 </option>
             <?php endforeach ?>
         </select>
 
         <label for="Modelo">Modelo:</label>
-        <imput name="Modelo" Id="Modelo" type="text" value="<?= $model->Modelo ?>" >
+        <imput name="Modelo" id="Modelo" type="text" value="<?= $model->Modelo ?>" >
 
         <label for="Ano ">Ano Fabricado:</label>
-        <input name="Ano" Id="Ano" type="date" value="<?= $model->Ano ?>" >
+        <input name="Ano" id="Ano" type="date" value="<?= $model->Ano ?>" >
 </body>
 </html>

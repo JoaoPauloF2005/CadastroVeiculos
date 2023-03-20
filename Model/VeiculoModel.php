@@ -10,8 +10,8 @@ use CadastroVeiculos\DAO\VeiculoDAO;
 
 class VeiculoModel extends Model
 {
-    public $Id, $Id_Marca, $Modelo, $Id_Fabricante, $Id_Tipo, $Id_Combustivel, $Ano, $Cor, $NumeroChassi, $Kilometragem, $Revisao,
-    $Sinistro, $Roubo_Furto, $Aluguel, $Venda, $Particular, $Observacoes;
+    public $id, $Modelo, $Ano, $NumeroChassi, $Cor, $Kilometragem, $Revisao, $Sinistro, 
+    $Roubo_Furto, $Aluguel, $Venda, $Particular, $Observacoes, $id_Marca, $id_Fabricante, $id_Tipo, $id_Combustivel;
 
     public $Lista_Marca, $Lista_Fabricante, $Lista_Tipo, $Lista_Combustivel;
 
@@ -22,7 +22,7 @@ class VeiculoModel extends Model
 
         $dao = new VeiculoDAO();
 
-        if(empty($this->Id))
+        if(empty($this->id))
         {
             $dao->insert($this);
         }
@@ -68,20 +68,20 @@ class VeiculoModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $Id)
+    public function getById(int $id)
     {
         $dao = new VeiculoDAO();
         
-        $obj = $dao->selectById($Id);
+        $obj = $dao->selectById($id);
 
         return ($obj) ? $obj : new VeiculoModel();
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
 
         $dao = new VeiculoDAO();
 
-        $dao->delete($Id);
+        $dao->delete($id);
     }
 }

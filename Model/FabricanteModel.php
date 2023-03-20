@@ -6,13 +6,13 @@ use CadastroVeiculos\DAO\FabricanteDAO;
 
 class FabricanteModel extends Model
 {
-    public $Id, $nome;
+    public $id, $nome;
 
     public function save()
     {
         $dao = new FabricanteDAO();
 
-        if(empty($this->Id))
+        if(empty($this->id))
         {
             $dao->insert($this);
         }
@@ -29,19 +29,19 @@ class FabricanteModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $Id)
+    public function getById(int $id)
     {
         $dao = new FabricanteDAO();
 
-        $obj = $dao->selectById($Id);
+        $obj = $dao->selectById($id);
 
         return ($obj) ? $obj : new FabricanteModel();
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
         $dao = new FabricanteDAO();
 
-        $dao->delete($Id);
+        $dao->delete($id);
     }
 }

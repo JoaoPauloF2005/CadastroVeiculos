@@ -29,19 +29,19 @@ class MarcaModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $Id)
+    public function getById(int $id)
     {
         $dao = new MarcaDAO();
 
-        $obj = $dao->selectById($Id);
+        $obj = $dao->selectById($id);
 
         return ($obj) ? $obj : new MarcaModel();
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
         $dao = new MarcaDAO();
 
-        $dao->delete($Id);
+        $dao->delete($id);
     }
 }

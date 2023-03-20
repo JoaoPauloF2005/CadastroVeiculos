@@ -4,39 +4,35 @@ use db_CadastroVeiculo;
 
 CREATE TABLE Marca
 (
-  Id int auto_increment,
+  id int auto_increment,
   nome varchar(45) not null,
-  primary key(Id)
+  primary key(id)
 );
 
 CREATE TABLE Fabricante
 (
-   Id int auto_increment,
+   id int auto_increment,
    nome varchar(45) not null,
-   primary key (Id)
+   primary key (id)
 );
 
 CREATE TABLE Tipo
 (
-  Id int auto_increment,
+  id int auto_increment,
   nome varchar(45) not null,
-  primary key (Id)
+  primary key (id)
 );
 
 CREATE TABLE Combustivel 
 (
-  Id int auto_increment,
+  id int auto_increment,
   nome varchar(45) not null,
-  primary key (Id)
+  primary key (id)
 );
 
 CREATE TABLE Veiculo
 (
-  Id int auto_increment,
-  Id_Marca int,
-  Id_Fabricante int,
-  Id_Tipo int,
-  Id_Combustivel int,
+  id int auto_increment,
   Modelo varchar(45) not null,
   Ano int not null,
   Cor varchar(45) not null,
@@ -49,9 +45,13 @@ CREATE TABLE Veiculo
   Venda boolean,
   Particular boolean,
   Observacoes varchar(300) not null,
-  primary key (Id),
-  foreign key (Id_Marca) references Marca(Id),
-  foreign key (Id_Fabricante) references Fabricante(Id),
-  foreign key (Id_Tipo) references Tipo(Id),
-  foreign key (Id_Combustivel) references Combustivel(Id)
+  id_Marca int,
+  id_Fabricante int,
+  id_Tipo int,
+  id_Combustivel int,
+  primary key (id),
+  foreign key (id_Marca) references Marca(id),
+  foreign key (id_Fabricante) references Fabricante(id),
+  foreign key (id_Tipo) references Tipo(id),
+  foreign key (id_Combustivel) references Combustivel(id)
 );

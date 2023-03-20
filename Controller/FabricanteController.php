@@ -20,7 +20,7 @@ class FabricanteController extends Controller
     {
         $model = new FabricanteModel();
 
-        if(isset($_GET['Id']))
+        if(isset($_GET['id']))
             $model = $model->getById( (int) $_GET['Id']);
 
         parent::render('Fabricante/FormFabricante', $model);
@@ -28,12 +28,12 @@ class FabricanteController extends Controller
 
     public static function save()
     {
-        $marca = new FabricanteModel();
+        $fabricante = new FabricanteModel();
 
-        $marca->Id = $_POST['Id'];
-        $marca->nome = $_POST['nome'];
+        $fabricante->id = $_POST['id'];
+        $fabricante->nome = $_POST['nome'];
 
-        $marca->save();
+        $fabricante->save();
 
         header("Location: /fabricante");
     }
@@ -42,7 +42,7 @@ class FabricanteController extends Controller
     {
         $model = new FabricanteModel();
 
-        $model->delete( (int) $_GET['Id']);
+        $model->delete( (int) $_GET['id']);
 
         header("Location: /fabricante");
     }

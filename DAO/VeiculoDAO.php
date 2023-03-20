@@ -17,101 +17,101 @@ class VeiculoDAO extends DAO
     function insert(VeiculoModel $model)
     {
         $sql = "INSERT INTO Veiculo
-                (Id_Marca, Id_Fabricante, Id_Tipo, Id_Combustivel, Modelo, Ano, 
-                 Cor, NumeroChassi, Kilometragem, Revisao, Sinistro, Roubo_Furto, Aluguel, Venda, Particular, Observacoes)
+                (Modelo, Ano, NumeroChassi, Cor, Kilometragem, Revisao, 
+                 Sinistro, Roubo_Furto, Aluguel, Venda, Particular, Observacoes, id_Marca, id_Fabricante, id_Tipo, id_Combustivel)
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         $stmt = $this->conexao->prepare($sql);
 
-        $stmt->bindValue(1, $model->Id_Marca);
-        $stmt->bindValue(2, $model->Id_Fabricante);
-        $stmt->bindValue(3, $model->Id_Tipo);
-        $stmt->bindValue(4, $model->Id_Combustivel);
-        $stmt->bindValue(5, $model->Modelo);
-        $stmt->bindValue(6, $model->Ano);
-        $stmt->bindValue(7, $model->Cor);
-        $stmt->bindValue(8, $model->NumeroChassi);
-        $stmt->bindValue(9, $model->Kilometragem);
-        $stmt->bindValue(10, $model->Revisao);
-        $stmt->bindValue(11, $model->Sinistro);
-        $stmt->bindValue(12, $model->Roubo_Furto);
-        $stmt->bindValue(13, $model->Aluguel);
-        $stmt->bindValue(14, $model->Venda);
-        $stmt->bindValue(15, $model->Particular);
-        $stmt->bindValue(16, $model->Observacoes);
-
+        $stmt->bindValue(1, $model->Modelo);
+        $stmt->bindValue(2, $model->Ano);
+        $stmt->bindValue(3, $model->NumeroChassi);
+        $stmt->bindValue(4, $model->Cor);
+        $stmt->bindValue(5, $model->Kilometragem);
+        $stmt->bindValue(6, $model->Revisao);
+        $stmt->bindValue(7, $model->Sinistro);
+        $stmt->bindValue(8, $model->Roubo_Furto);
+        $stmt->bindValue(9, $model->Aluguel);
+        $stmt->bindValue(10, $model->Venda);
+        $stmt->bindValue(11, $model->Particular);
+        $stmt->bindValue(12, $model->Observacoes);
+        $stmt->bindValue(13, $model->id_Marca);
+        $stmt->bindValue(14, $model->id_Fabricante);
+        $stmt->bindValue(15, $model->id_Tipo);
+        $stmt->bindValue(16, $model->id_Combustivel);
         $stmt->execute();
 
     }
 
     public function update(VeiculoModel $model)
     {
-        $sql = "UPDATE Veiculo SET Id_Marca=?, Id_Fabricante=?, Id_Tipo=?, Id_Combustivel=?, Modelo=?, Ano=?, Cor=?, NumeroChassi=?, Kilometragem=?, Revisao=?, Sinistro=?, Roubo_Furto=?,
-         Aluguel=?, Venda=?, Particular=?, Observacoes=? WHERE Id=? ";
+        $sql = "UPDATE Veiculo SET Modelo=?, Ano=?, NumeroChassi=?, Cor=?, Kilometragem=?, Revisao=?, Sinistro=?, Roubo_Furto=?, Aluguel=?, Venda=?, Particular=?,
+         Observacoes=?, id_Marca=?, id_Fabricante=?, id_Tipo, id_Combustivel=? WHERE id=? ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $model->Id_Marca);
-        $stmt->bindValue(2, $model->Id_Fabricante);
-        $stmt->bindValue(3, $model->Id_Tipo);
-        $stmt->bindValue(4, $model->Id_Combustivel);
-        $stmt->bindValue(5, $model->Modelo);
-        $stmt->bindValue(6, $model->Ano);
-        $stmt->bindValue(7, $model->Cor);
-        $stmt->bindValue(8, $model->NumeroChassi);
-        $stmt->bindValue(9, $model->Kilometragem);
-        $stmt->bindValue(10, $model->Revisao);
-        $stmt->bindValue(11, $model->Sinistro);
-        $stmt->bindValue(12, $model->Roubo_Furto);
-        $stmt->bindValue(13, $model->Aluguel);
-        $stmt->bindValue(14, $model->Venda);
-        $stmt->bindValue(15, $model->Particular);
-        $stmt->bindValue(16, $model->Observacoes);
-        $stmt->bindValue(17, $model->Id);
+
+        $stmt->bindValue(1, $model->Modelo);
+        $stmt->bindValue(2, $model->Ano);
+        $stmt->bindValue(3, $model->NumeroChassi);
+        $stmt->bindValue(4, $model->Cor);
+        $stmt->bindValue(5, $model->Kilometragem);
+        $stmt->bindValue(6, $model->Revisao);
+        $stmt->bindValue(7, $model->Sinistro);
+        $stmt->bindValue(8, $model->Roubo_Furto);
+        $stmt->bindValue(9, $model->Aluguel);
+        $stmt->bindValue(10, $model->Venda);
+        $stmt->bindValue(11, $model->Particular);
+        $stmt->bindValue(12, $model->Observacoes);
+        $stmt->bindValue(13, $model->id_Marca);
+        $stmt->bindValue(14, $model->id_Fabricante);
+        $stmt->bindValue(15, $model->id_Tipo);
+        $stmt->bindValue(16, $model->id_Combustivel);
+        $stmt->bindValue(17, $model->id);
         $stmt->execute();
     }
 
     public function select()
     {
-        $sql = "SELECT v.Id, v.Modelo, v.Ano, v.Cor, v.NumeroChassi, v.Kilometragem, v.Revisao, v.Sinistro, 
+        $sql = "SELECT v.id, v.Modelo, v.Ano, v.NumeroChassi, v.Cor, v.Kilometragem, v.Revisao, v.Sinistro, 
         v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
         m.nome AS Marca, f.nome AS Fabricante, t.nome AS Tipo, c.nome AS Combustivel
         FROM Veiculo v
-        JOIN Marca m ON (m.Id = v.Id_Marca)
-        JOIN Fabricante f ON (f.Id = v.Id_Fabricante)
-        JOIN TipoDeVeiculo t ON (t.Id = v.Id_TipoDeVeiculo)
-        JOIN Combustivel c ON (c.Id = v.Id_Combustivel)";
+        JOIN Marca m ON (m.id = v.id_Marca)
+        JOIN Fabricante f ON (f.id = v.id_Fabricante)
+        JOIN TipoDeVeiculo t ON (t.id = v.id_TipoDeVeiculo)
+        JOIN Combustivel c ON (c.id = v.id_Combustivel)";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     } 
 
-    public function selectById(int $Id)
+    public function selectById(int $id)
     {
-        $sql = "SELECT v.Id, v.Modelo, v.Ano, v.Cor, v.NumeroChassi, v.Kilometragem, v.Revisao, v.Sinistro, 
+        $sql = "SELECT v.id, v.Modelo, v.Ano, v.NumeroChassi, v.Cor, v.Kilometragem, v.Revisao, v.Sinistro, 
         v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
         m.nome AS Marca, f.nome AS Fabricante, t.nome AS Tipo, c.nome AS Combustivel
         FROM Veiculo v
-        JOIN Marca m ON (m.Id = v.Id_Marca)
-        JOIN Fabricante f ON (f.Id = v.Id_Fabricante)
-        JOIN TipoDeVeiculo t ON (t.Id = v.Id_TipoDeVeiculo)
-        JOIN Combustivel c ON (c.Id = v.Id_Combustivel)
-        WHERE v.Id=?";
+        JOIN Marca m ON (m.id = v.id_Marca)
+        JOIN Fabricante f ON (f.id = v.id_Fabricante)
+        JOIN TipoDeVeiculo t ON (t.id = v.id_TipoDeVeiculo)
+        JOIN Combustivel c ON (c.id = v.id_Combustivel)
+        WHERE v.id=?";
                 
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("CadastroVeiculos\ModelVeiculoModel"); 
+        return $stmt->fetchObject("CadastroVeiculos\Model\VeiculoModel"); 
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
-        $sql = "DELETE FROM Veiculo WHERE Id = ? ";
+        $sql = "DELETE FROM Veiculo WHERE id = ? ";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
     }
 }

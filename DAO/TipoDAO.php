@@ -25,11 +25,11 @@ class TipoDAO extends DAO
 
     public function update(TipoModel $model)
     {
-        $sql = "UPDATE Tipo SET nome=? WHERE Id=?";
+        $sql = "UPDATE Tipo SET nome=? WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->Id);
+        $stmt->bindValue(2, $model->id);
         $stmt->execute();
     }
 
@@ -44,23 +44,23 @@ class TipoDAO extends DAO
         return $stmt->fetchAll();
     }
 
-    public function selectById(int $Id)
+    public function selectById(int $id)
     {
-        $sql = "SELECT * FROM Tipo WHERE Id = ?";
+        $sql = "SELECT * FROM Tipo WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
 
         return $stmt->fetchObject("CadastroVeiculos\Model\TipoModel");
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
-        $sql = "DELETE FROM Tipo WHERE Id = ?";
+        $sql = "DELETE FROM Tipo WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
     }
 }

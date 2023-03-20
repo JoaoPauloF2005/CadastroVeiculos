@@ -6,13 +6,13 @@ use CadastroVeiculos\DAO\CombustivelDAO;
 
 class CombustivelModel extends Model
 {
-    public $Id, $nome;
+    public $id, $nome;
 
     public function save()
     {
         $dao = new CombustivelDAO();
 
-        if(empty($this->Id))
+        if(empty($this->id))
         {
             $dao->insert($this);
         }
@@ -29,19 +29,19 @@ class CombustivelModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $Id)
+    public function getById(int $id)
     {
         $dao = new CombustivelDAO();
 
-        $obj = $dao->selectById($Id);
+        $obj = $dao->selectById($id);
 
         return ($obj) ? $obj : new CombustivelModel();
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
         $dao = new CombustivelDAO();
 
-        $dao->delete($Id);
+        $dao->delete($id);
     }
 }

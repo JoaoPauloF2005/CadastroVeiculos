@@ -25,11 +25,11 @@ class FabricanteDAO extends DAO
 
     public function update(FabricanteModel $model)
     {
-        $sql = "UPDATE Fabricante SET nome=? WHERE Id=?";
+        $sql = "UPDATE Fabricante SET nome=? WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->Id);
+        $stmt->bindValue(2, $model->id);
         $stmt->execute();
     }
 
@@ -44,23 +44,23 @@ class FabricanteDAO extends DAO
         return $stmt->fetchAll();
     }
 
-    public function selectById(int $Id)
+    public function selectById(int $id)
     {
-        $sql = "SELECT * FROM Fabricante WHERE Id = ?";
+        $sql = "SELECT * FROM Fabricante WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
 
         return $stmt->fetchObject("CadastroVeiculos\Model\FabricanteModel");
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
-        $sql = "DELETE FROM Fabricante WHERE Id = ?";
+        $sql = "DELETE FROM Fabricante WHERE id = ?";
 
         $stmt = $this->conexao->prepare($sql);
-        $stmt->bindValue(1, $Id);
+        $stmt->bindValue(1, $id);
         $stmt->execute();
     }
 }

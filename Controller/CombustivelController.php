@@ -20,20 +20,20 @@ class CombustivelController extends Controller
     {
         $model = new CombustivelModel();
 
-        if(isset($_GET['Id']))
-            $model = $model->getById( (int) $_GET['Id']);
+        if(isset($_GET['id']))
+            $model = $model->getById( (int) $_GET['id']);
 
         parent::render('Combustivel/FormCombustivel', $model);
     }
 
     public static function save()
     {
-        $marca = new CombustivelModel();
+        $combustivel = new CombustivelModel();
 
-        $marca->Id = $_POST['Id'];
-        $marca->nome = $_POST['nome'];
+        $combustivel->id = $_POST['id'];
+        $combustivel->nome = $_POST['nome'];
 
-        $marca->save();
+        $combustivel->save();
 
         header("Location: /combustivel");
     }
@@ -42,7 +42,7 @@ class CombustivelController extends Controller
     {
         $model = new CombustivelModel();
 
-        $model->delete( (int) $_GET['Id']);
+        $model->delete( (int) $_GET['id']);
 
         header("Location: /combustivel");
     }

@@ -19,10 +19,10 @@
             <div class="container">
                 <fieldset>
 
-                    <input type="hidden" value="<?= $model->Id ?>" name="Id" />
+                    <input type="hidden" value="<?= $model->id ?>" name="id" />
 
                     <label for="nome">Combustivel:</label>
-                    <input name="nome" Id="nome" value="<?= $model->nome ?>" type="text" /> <br>
+                    <input name="nome" id="nome" value="<?= $model->nome ?>" type="text" /> <br>
                     
                     <button type="submit">Enviar</button>
 

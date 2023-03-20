@@ -12,7 +12,7 @@ class MarcaController extends Controller
         $model = new MarcaModel();
         $model->getAllRows();
 
-        parent::render('Fabricante/ListaFabricante', $model);
+        parent::render('Marca/ListaMarca', $model);
         
     }
 
@@ -20,17 +20,17 @@ class MarcaController extends Controller
     {
         $model = new MarcaModel();
 
-        if(isset($_GET['Id']))
-            $model = $model->getById( (int) $_GET['Id']);
+        if(isset($_GET['id']))
+            $model = $model->getById( (int) $_GET['id']);
 
-        parent::render('Marca/FormCMarca', $model);
+        parent::render('Marca/FormMarca', $model);
     }
 
     public static function save()
     {
         $marca = new MarcaModel();
 
-        $marca->id = $_POST['Id'];
+        $marca->id = $_POST['id'];
         $marca->nome = $_POST['nome'];
 
         $marca->save();
@@ -42,7 +42,7 @@ class MarcaController extends Controller
     {
         $model = new MarcaModel();
 
-        $model->delete( (int) $_GET['Id']);
+        $model->delete( (int) $_GET['id']);
 
         header("Location: /marca");
     }

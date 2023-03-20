@@ -6,13 +6,13 @@ use CadastroVeiculos\DAO\TipoDAO;
 
 class TipoModel extends Model
 {
-    public $Id, $nome;
+    public $id, $nome;
 
     public function save()
     {
         $dao = new TipoDAO();
 
-        if(empty($this->Id))
+        if(empty($this->id))
         {
             $dao->insert($this);
         }
@@ -29,19 +29,19 @@ class TipoModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $Id)
+    public function getById(int $id)
     {
         $dao = new TipoDAO();
 
-        $obj = $dao->selectById($Id);
+        $obj = $dao->selectById($id);
 
         return ($obj) ? $obj : new TipoModel();
     }
 
-    public function delete(int $Id)
+    public function delete(int $id)
     {
         $dao = new TipoDAO();
 
-        $dao->delete($Id);
+        $dao->delete($id);
     }
 }
