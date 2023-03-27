@@ -10,6 +10,7 @@
     </style>
 </head>
 <body>
+<?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
     <form action="/fabricante/save" method="post">
 

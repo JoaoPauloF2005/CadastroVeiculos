@@ -17,6 +17,8 @@
 
 <body>
 
+<?php include 'View/modules/Pagina_Inicial/home.php' ?>
+
 
     <div class="container">
 
@@ -69,7 +71,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Ano">Ano Fabricado:</label>
                 <div class="col-sm-10">
-                    <input name="Ano" id="Ano" type="number" class="form-control" value="<?= $model->Ano ?>">
+                    <input name="Ano" id="Ano" type="year" class="form-control" value="<?= $model->Ano ?>">
                 </div>
             </div>
 
@@ -88,14 +90,14 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Cor">Cor:</label>
+                <label class="control-label col-sm-2" for="Cor">Cor:</label>
                 <div class="col-sm-10">
                     <input name="Cor" id="Cor" type="text" class="form-control" value="<?= $model->Cor ?>">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=NumeroChassi">NumeroChassi:</label>
+                <label class="control-label col-sm-2" for="NumeroChassi">NumeroChassi:</label>
                 <div class=" col-sm-10">
                     <input name="NumeroChassi" id="NumeroChassi" type="text" class="form-control"
                         value="<?= $model->NumeroChassi ?>">
@@ -103,7 +105,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Kilometragem">Kilometragem:</label>
+                <label class="control-label col-sm-2" for="Kilometragem">Kilometragem:</label>
                 <div class=" col-sm-10">
                     <input name="Kilometragem" id="Kilometragem" type="number" class="form-control"
                         value="<?= $model->Kilometragem ?>">
@@ -111,7 +113,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Revisao">Revisão:</label>
+                <label class="control-label col-sm-2" for="Revisao">Revisão:</label>
                 <div class=" col-sm-10">
                     <input name="Revisao" id="Revisao" type="checkbox" class="form-check-input"
                         value="<?= $model->Revisao ?>">
@@ -119,7 +121,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Sinistro">Sinistro:</label>
+                <label class="control-label col-sm-2" for="Sinistro">Sinistro:</label>
                 <div class=" col-sm-10">
                     <input name="Sinistro" id="Sinistro" type="checkbox" class="form-check-input"
                         value="<?= $model->Sinistro ?>">
@@ -127,7 +129,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Roubo_Furto">Roubo/Furto:</label>
+                <label class="control-label col-sm-2" for="Roubo_Furto">Roubo/Furto:</label>
                 <div class=" col-sm-10">
                     <input name="Roubo_Furto" id="Roubo_Furto" type="checkbox" class="form-check-input"
                         value="<?= $model->Roubo_Furto ?>">
@@ -135,7 +137,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Aluguel">Aluguel:</label>
+                <label class="control-label col-sm-2" for="Aluguel">Aluguel:</label>
                 <div class=" col-sm-10">
                     <input name="Aluguel" id="Aluguel" type="checkbox" class="form-check-input"
                         value="<?= $model->Aluguel ?>">
@@ -143,7 +145,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Venda">Venda:</label>
+                <label class="control-label col-sm-2" for="Venda">Venda:</label>
                 <div class=" col-sm-10">
                     <input name="Venda" id="Venda" type="checkbox" class="form-check-input"
                         value="<?= $model->Venda ?>">
@@ -151,7 +153,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Particular">Particular:</label>
+                <label class="control-label col-sm-2" for="Particular">Particular:</label>
                 <div class=" col-sm-10">
                     <input name="Particular" id="Particular" type="checkbox" class="form-check-input"
                         value="<?= $model->Particular ?>">
@@ -159,7 +161,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=Observacoes">Observação:</label>
+                <label class="control-label col-sm-2" for="Observacoes">Observação:</label>
                 <div class=" col-sm-10">
                     <input name="Observacoes" id="Observacoes" type="text" class="form-control"
                         value="<?= $model->Observacoes ?>">

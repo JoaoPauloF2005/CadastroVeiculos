@@ -10,7 +10,8 @@
     </style>
 </head>
 <body>
-
+<?php include 'View/modules/Pagina_Inicial/home.php' ?>
+ 
     <form action="/marca/save" method="post">
 
         <h1> Cadastro de Marcas</h1>
