@@ -69,7 +69,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Ano">Ano Fabricado:</label>
                 <div class="col-sm-10">
-                    <input name="Ano" id="Ano" type="text" class="form-control" value="<?= $model->Ano ?>">
+                    <input name="Ano" id="Ano" type="number" class="form-control" value="<?= $model->Ano ?>">
                 </div>
             </div>
 
@@ -105,7 +105,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for=Kilometragem">Kilometragem:</label>
                 <div class=" col-sm-10">
-                    <input name="Kilometragem" id="Kilometragem" type="text" class="form-control"
+                    <input name="Kilometragem" id="Kilometragem" type="number" class="form-control"
                         value="<?= $model->Kilometragem ?>">
                 </div>
             </div>
@@ -127,7 +127,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for=roubo_furto">Roubo/Furto:</label>
+                <label class="control-label col-sm-2" for=Roubo_Furto">Roubo/Furto:</label>
                 <div class=" col-sm-10">
                     <input name="Roubo_Furto" id="Roubo_Furto" type="checkbox" class="form-check-input"
                         value="<?= $model->Roubo_Furto ?>">
