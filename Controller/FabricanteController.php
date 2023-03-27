@@ -21,7 +21,7 @@ class FabricanteController extends Controller
         $model = new FabricanteModel();
 
         if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['Id']);
+            $model = $model->getByid( (int) $_GET['Id']);
 
         parent::render('Fabricante/FormFabricante', $model);
     }

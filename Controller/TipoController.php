@@ -21,7 +21,7 @@ class TipoController extends Controller
         $model = new TipoModel();
 
         if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['id']);
+            $model = $model->getByid( (int) $_GET['id']);
 
         parent::render('Tipo/FormTipo', $model);
     }

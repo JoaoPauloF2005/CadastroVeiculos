@@ -44,7 +44,7 @@ class CombustivelDAO extends DAO
         return $stmt->fetchAll();
     }
 
-    public function selectById(int $id)
+    public function selectByid(int $id)
     {
         $sql = "SELECT * FROM Combustivel WHERE id = ?";
 

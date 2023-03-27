@@ -68,11 +68,11 @@ class VeiculoModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $id)
+    public function getByid(int $id)
     {
         $dao = new VeiculoDAO();
         
-        $obj = $dao->selectById($id);
+        $obj = $dao->selectByid($id);
 
         return ($obj) ? $obj : new VeiculoModel();
     }

@@ -29,11 +29,11 @@ class FabricanteModel extends Model
         $this->rows = $dao->select();
     }
 
-    public function getById(int $id)
+    public function getByid(int $id)
     {
         $dao = new FabricanteDAO();
 
-        $obj = $dao->selectById($id);
+        $obj = $dao->selectByid($id);
 
         return ($obj) ? $obj : new FabricanteModel();
     }

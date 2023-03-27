@@ -11,7 +11,7 @@ class VeiculoController extends Controller
     {
         $model = new VeiculoModel();
         $model->getAllRows();
-        parent::render( 'Veiculo/ListaVeiculo.php', $model);
+        parent::render( 'Veiculo/ListaVeiculo', $model);
     }
 
     public static function form()
@@ -19,7 +19,7 @@ class VeiculoController extends Controller
         $model = new VeiculoModel();
 
         if(isset($_GET['id']))
-        $model = $model->getById( (int) $_GET['id']);
+        $model = $model->getByid( (int) $_GET['id']);
 
         $model->Lista_Marca = $model->getAllMarca();
         $model->Lista_Fabricante = $model->getAllFabricante();

@@ -21,7 +21,7 @@ class MarcaController extends Controller
         $model = new MarcaModel();
 
         if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['id']);
+            $model = $model->getByid( (int) $_GET['id']);
 
         parent::render('Marca/FormMarca', $model);
     }

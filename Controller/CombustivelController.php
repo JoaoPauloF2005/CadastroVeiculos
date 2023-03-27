@@ -21,7 +21,7 @@ class CombustivelController extends Controller
         $model = new CombustivelModel();
 
         if(isset($_GET['id']))
-            $model = $model->getById( (int) $_GET['id']);
+            $model = $model->getByid( (int) $_GET['id']);
 
         parent::render('Combustivel/FormCombustivel', $model);
     }

@@ -87,7 +87,7 @@ class VeiculoDAO extends DAO
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     } 
 
-    public function selectById(int $id)
+    public function selectByid(int $id)
     {
         $sql = "SELECT v.id, v.Modelo, v.Ano, v.NumeroChassi, v.Cor, v.Kilometragem, v.Revisao, v.Sinistro, 
         v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
