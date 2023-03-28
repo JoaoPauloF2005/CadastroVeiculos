@@ -56,7 +56,8 @@
             <td><?= $item->Cor ?></td>
             <td><?= $item->NumeroChassi ?></td>
             <td><?= $item->Kilometragem ?></td>
-            <td><?= $item->Revisao ?>
+
+            <td>
                 <?php if($item->Revisao == '1')
                 {
                     echo 'Sim';
@@ -64,7 +65,7 @@
                 else if($item->Revisao == '0')
                     echo 'Não' ?>
             </td>
-            <td><?= $item->Sinistro ?>
+            <td>
                 <?php if($item->Sinistro == '1')
                 {
                     echo 'Sim';
@@ -73,7 +74,7 @@
                     echo 'Não' ?>
             </td>
 
-            <td><?= $item->Roubo_Furto ?>
+            <td>
                 <?php if($item->Roubo_Furto == '1')
                 {
                     echo 'Sim';
@@ -82,7 +83,7 @@
                     echo 'Não' ?>
             </td>
             
-            <td><?= $item->Aluguel ?>
+            <td>
                 <?php if($item->Aluguel == '1')
                 {
                     echo 'Sim';
@@ -90,7 +91,7 @@
                 else if($item->Aluguel == '0')
                     echo 'Não' ?>
             </td>
-            <td><?= $item->Venda ?>
+            <td>
                 <?php if($item->Venda == '1')
                 {
                     echo 'Sim';
@@ -98,7 +99,7 @@
                 else if($item->Venda == '0')
                     echo 'Não' ?>
             </td>
-            <td><?= $item->Particular ?>
+            <td>
             <?php if($item->Particular == '1')
                 {
                     echo 'Sim';
