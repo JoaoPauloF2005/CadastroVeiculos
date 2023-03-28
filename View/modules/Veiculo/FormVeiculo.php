@@ -156,7 +156,10 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Particular">Particular:</label>
                 <div class=" col-sm-10">
-                    <input name="Particular" id="Particular" type="checkbox" class="form-check-input"
+                    <input name="Particular" id="Particular"  type="checkbox" class="form-check-input"
+                            
+                    <?= ($model->Particular == 1) ? 'checked' : '' ?>
+                            
                         value="<?= $model->Particular ?>">
                 </div>
             </div>

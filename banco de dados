@@ -34,7 +34,7 @@ CREATE TABLE Veiculo
 (
   id int auto_increment,
   Modelo varchar(45) not null,
-  Ano datetime not null,
+  Ano year not null,
   Cor varchar(45) not null,
   NumeroChassi varchar(17) not null,
   Kilometragem char(150) not null, 

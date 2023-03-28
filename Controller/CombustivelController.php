@@ -12,7 +12,7 @@ class CombustivelController extends Controller
         $model = new CombustivelModel();
         $model->getAllRows();
 
-        parent::render('Combustivel/ListaCombustivel', $model);
+        parent::render('Pagina_Inicial/home', $model);
         
     }
 

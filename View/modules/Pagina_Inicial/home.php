@@ -24,11 +24,12 @@
                             </li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Cadastrados <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="/funcionario/save">Funcionario</a></li>
-                                    <li><a href="/pessoa/save">Pessoa</a></li>
-                                    <li><a href="/produto/save">Produto</a></li>
-                                    <li><a href="/Categoria_Produto/save">Categoria Produto</a></li>
-                                    
+                                    <li><a href="/combustivel">Combustivel</a></li>
+                                    <li><a href="/fabricante">Fabricante</a></li>
+                                    <li><a href="/marca">Marca</a></li>
+                                    <li><a href="/tipo">Tipo</a></li>
+                                    <li><a href="/veiculo">Veiculo</a></li>
+
                                 </ul>
                             </li>
                             

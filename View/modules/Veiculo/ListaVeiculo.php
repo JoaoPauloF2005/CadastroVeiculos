@@ -56,12 +56,56 @@
             <td><?= $item->Cor ?></td>
             <td><?= $item->NumeroChassi ?></td>
             <td><?= $item->Kilometragem ?></td>
-            <td><?= $item->Revisao ?></td>
-            <td><?= $item->Sinistro ?></td>
-            <td><?= $item->Roubo_Furto ?></td>
-            <td><?= $item->Aluguel ?></td>
-            <td><?= $item->Venda ?></td>
-            <td><?= $item->Particular ?></td>
+            <td><?= $item->Revisao ?>
+                <?php if($item->Revisao == '1')
+                {
+                    echo 'Sim';
+                }
+                else if($item->Revisao == '0')
+                    echo 'Não' ?>
+            </td>
+            <td><?= $item->Sinistro ?>
+                <?php if($item->Sinistro == '1')
+                {
+                    echo 'Sim';
+                }
+                else if($item->Sinistro == '0')
+                    echo 'Não' ?>
+            </td>
+
+            <td><?= $item->Roubo_Furto ?>
+                <?php if($item->Roubo_Furto == '1')
+                {
+                    echo 'Sim';
+                }
+                else if($item->Roubo_Furto == '0')
+                    echo 'Não' ?>
+            </td>
+            
+            <td><?= $item->Aluguel ?>
+                <?php if($item->Aluguel == '1')
+                {
+                    echo 'Sim';
+                }
+                else if($item->Aluguel == '0')
+                    echo 'Não' ?>
+            </td>
+            <td><?= $item->Venda ?>
+                <?php if($item->Venda == '1')
+                {
+                    echo 'Sim';
+                }
+                else if($item->Venda == '0')
+                    echo 'Não' ?>
+            </td>
+            <td><?= $item->Particular ?>
+            <?php if($item->Particular == '1')
+                {
+                    echo 'Sim';
+                }
+                else if($item->Particular == '0')
+                    echo 'Não' ?>
+            </td>
             <td><?= $item->Observacoes ?></td> 
 
 
