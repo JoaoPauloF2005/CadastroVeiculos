@@ -17,6 +17,7 @@
 
 <body>
 
+
 <?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
 
@@ -139,7 +140,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2" for="Aluguel">Aluguel:</label>
                 <div class=" col-sm-10">
-                    <input name="Aluguel" id="Aluguel" type="checkbox" class="form-check-input"
+                    <input name="Aluguel[]" id="Aluguel" type="checkbox" class="form-check-input"
                         value="<?= $model->Aluguel ?>">
                 </div>
             </div>
