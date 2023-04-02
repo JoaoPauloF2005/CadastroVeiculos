@@ -16,7 +16,7 @@
     <table>
         <tr>
             <th></th>
-            <th>id</th>
+         
             <th>Marca</th>
             <th>Modelo</th>
             <th>Fabricante</th>
@@ -26,7 +26,7 @@
             <th>Cor</th>
             <th>Numero de Chassi</th>
             <th>Kilometragem</th>
-            <th>Revisao</th>
+            <th>Reviso</th>
             <th>Sinistro</th>
             <th>Roubo/Furto</th>
             <th>Aluguel</th>
@@ -38,10 +38,10 @@
         <?php foreach($model->rows as $item): ?>
         <tr>
             <td>
-                <a href="/veiculo/delete?id=<?= $item->id ?>">X</a>
+                <a href="/veiculo/delete?id=<?= $item->id ?>">Excluir</a>
             </td>
 
-            <td><?= $item->id ?></td>
+            
 
             <td>
                 <a href="/veiculo/form?id=<?= $item->id ?>"><?= $item->Marca ?></a>
