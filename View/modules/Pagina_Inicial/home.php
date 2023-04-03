@@ -6,7 +6,7 @@
                     <div class="navbar-header">
                         <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse">
                             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                        <a href="/home" class="navbar-brand">CADUSER.COM</a>
+                        <a href="/home" class="navbar-brand">CADCAR.COM</a>
                     </div>
                     
                     <div class="navbar-collapse collapse" id="mobile_menu">

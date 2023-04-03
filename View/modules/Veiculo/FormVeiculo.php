@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/../../css/estilo_formVeiculo.css">
 
 
+
     <title>Cadastro de Veículos
     </title>
 
@@ -85,17 +86,18 @@
             <input name="Cor" id="Cor" type="text" class="form-control" placeholder="Digite a cor do veiculo" value="<?= $model->Cor ?>">
         </div>
 
-        <div class="container-fluid numero_chassi">
-            <div class="form-row">
+        <div class="container-fluid">
+            <div class="form-row numero_chassi">
                <div class="form-group col-md-5">
                   <h4>Numero de Chassi:</h4>
                   <input name="NumeroChassi" id="NumeroChassi" type="text" class="form-control" placeholder="Digite o chassi do veiculo" value="<?= $model->NumeroChassi ?>">          
                 </div>
-           </div>
-
-            <div class="form-group col-md-5">
+            
+        
+            <div class="form-group col-md-5 kilometragem">
             <h4>Kilometragem:</h4>
             <input name="Kilometragem" id="Kilometragem" type="number" class="form-control" placeholder="Digite o KM" value="<?= $model->Kilometragem ?>">
+        </div>
         </div>
 
         <div class="container-fluid">
@@ -137,7 +139,7 @@
             <input name="Observacoes" id="Observacoes" type="text" class="form-control" value="<?= $model->Observacoes ?>">
         </div>
 
-        <div class="container">
+        <div class="container-fluid button">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
              Cadastrar
             </button>
