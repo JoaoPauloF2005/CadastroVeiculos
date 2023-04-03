@@ -1,2 +1,12 @@
-.container-fluid{
-}
+table, td, th {
+    border: 1px solid black;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td {
+    text-align: center;
+  }

@@ -22,7 +22,7 @@
 <?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
 
-</body>
+
 <form class="form-horizontal" action="/veiculo/save" method="post">    
     <div class="container">
         <div class="container-fluid marca">
@@ -88,7 +88,7 @@
 
         <div class="container-fluid">
             <div class="form-row numero_chassi">
-               <div class="form-group col-md-5">
+               <div class="form-group col-xs-12 col-md-5">
                   <h4>Numero de Chassi:</h4>
                   <input name="NumeroChassi" id="NumeroChassi" type="text" class="form-control" placeholder="Digite o chassi do veiculo" value="<?= $model->NumeroChassi ?>">          
                 </div>
@@ -165,6 +165,7 @@
             </div>
         </div>
     </div>
-</form>
     
+</form>
+</body>
 </html>

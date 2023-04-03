@@ -4,9 +4,7 @@
 }
 
  .observacoes{
-  margin-right: 80px;
-  float: left;
-  width: 110%;
+  width: 565px;
   
 }
 
@@ -14,6 +12,7 @@
    margin-left: -149px;
 }
 
+/*
 .container{
   border-style:solid ;
   border-radius: 10px;
@@ -22,5 +21,17 @@
   padding:5px;
   background-color: aquamarine;
   
+}
+*/
+
+.button{
+  float:right;
+  margin-top: 50px;
+   
+}
+
+.kilometragem{
+  float: left;
+  margin-left: 100px;
 }
 
