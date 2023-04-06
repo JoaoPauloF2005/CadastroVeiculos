@@ -22,7 +22,7 @@
                                     
                                 </ul>
                             </li>
-                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Cadastrados <span class="caret"></span></a>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Listar <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/combustivel">Combustivel</a></li>
                                     <li><a href="/fabricante">Fabricante</a></li>

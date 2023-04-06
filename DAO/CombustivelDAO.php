@@ -41,7 +41,7 @@ class CombustivelDAO extends DAO
 
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function selectByid(int $id)
