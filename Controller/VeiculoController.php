@@ -11,7 +11,7 @@ class VeiculoController extends Controller
     {
         $model = new VeiculoModel();
         $model->getAllRows();
-        parent::render( 'Veiculo/ListaVeiculo', $model);
+        parent::render('Veiculo/ListaVeiculo', $model);
     }
 
     public static function form()

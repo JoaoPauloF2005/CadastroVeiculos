@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,44 +9,47 @@
 
     <title>Lista Fabricantes</title>
 </head>
+
 <body>
 
-<?php include 'View/modules/Pagina_Inicial/home.php' ?>
+    <?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
 
     <table>
-        <tr>
-            <th></th>
-            <th>id</th>
-            <th>Fabricante</th>
-           
-        </tr>
+        <thead>
+            <tr>
+                <th></th>
+                <th>id</th>
+                <th>Fabricante</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($model->rows as $item) : ?>
+                <tr>
+                    <td>
+                        <a href="/fabricante/delete?id=<?= $item->id ?>">X</a>
+                    </td>
 
-        <?php foreach($model->rows as $item): ?>
-        <tr>
-            <td>
-                <a href="/fabricante/delete?id=<?= $item->id ?>">X</a>
-            </td>
+                    <td><?= $item->id ?></td>
 
-            <td><?= $item->id ?></td>
-
-            <td>
-                <a href="/fabricante/form?id=<?= $item->id ?>"><?= $item->Fabricante ?></a>
-            </td>
+                    <td>
+                        <a href="/fabricante/form?id=<?= $item->id ?>"><?= $item->nome ?></a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+        </tbody>
 
 
 
-         </tr>
-        <?php endforeach ?>
 
-        
-        <?php if(count($model->rows) == 0): ?>
+        <?php if (count($model->rows) == 0) : ?>
             <tr>
                 <td colspan="5">Nenhum registro encontrado.</td>
             </tr>
         <?php endif ?>
 
     </table>
-    
+
 </body>
+
 </html>
