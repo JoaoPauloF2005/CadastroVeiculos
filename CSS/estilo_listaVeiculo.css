@@ -1,20 +1,21 @@
-table, td, th {
-    
-    margin-left: 10px;
+ 
+ td, th {
+    border: solid red;
+    border-width: thin;
+    padding:10px;
+    margin-bottom: 10px;
   }
   
   table {
-    border-collapse: collapse;
     width: 50%;
-    
+
   }
   
   td {
-    text-align: center;
+    text-align: justify;
+    border-bottom: 2px solid red;
   }
 
   tr{
-    float:none;
     text-align: center;
-    margin-left: 100px;
   }

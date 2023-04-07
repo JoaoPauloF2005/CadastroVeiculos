@@ -22,7 +22,6 @@
     <?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
 
-
     <form class="form-horizontal" action="/veiculo/save" method="post">
 
         <div class="container">
@@ -30,25 +29,27 @@
                 <h4>Marca:</h4>
                 <select class="form-control" name="Marca">
                     <?php foreach ($model->Lista_Marca as $Marca) : ?>
-                        <option value="<?= $Marca->id ?>" <?= ($Marca->id == $model->id_Marca) ? 'selected' : " " ?>>
-                            <?= $Marca->nome ?>
-                        </option>
+                    <option value="<?= $Marca->id ?>" <?= ($Marca->id == $model->id_Marca) ? 'selected' : " " ?>>
+                        <?= $Marca->nome ?>
+                    </option>
                     <?php endforeach ?>
                 </select>
             </div>
 
             <div class="container-fluid input-container ">
                 <h4>Modelo:</h4>
-                <input name="Modelo" id="Modelo" type="text" class="form-control" placeholder="Digite o modelo do veiculo" value="<?= $model->Modelo ?>">
+                <input name="Modelo" id="Modelo" type="text" class="form-control"
+                    placeholder="Digite o modelo do veiculo" value="<?= $model->Modelo ?>">
             </div>
 
             <div class="container-fluid input-container">
                 <h4>Fabricante:</h4>
                 <select class="form-control" name="Fabricante">
                     <?php foreach ($model->Lista_Fabricante as $Fabricante) : ?>
-                        <option value="<?= $Fabricante->id ?>" <?= ($Fabricante->id == $model->id_Fabricante) ? 'selected' : " " ?>>
-                            <?= $Fabricante->nome ?>
-                        </option>
+                    <option value="<?= $Fabricante->id ?>"
+                        <?= ($Fabricante->id == $model->id_Fabricante) ? 'selected' : " " ?>>
+                        <?= $Fabricante->nome ?>
+                    </option>
                     <?php endforeach ?>
                 </select>
             </div>
@@ -57,82 +58,94 @@
                 <h4>Tipo:</h4>
                 <select class="form-control" name="Tipo">
                     <?php foreach ($model->Lista_Tipo as $Tipo) : ?>
-                        <option value="<?= $Tipo->id ?>" <?= ($Tipo->id == $model->id_Tipo) ? 'selected' : " " ?>>
-                            <?= $Tipo->nome ?>
-                        </option>
+                    <option value="<?= $Tipo->id ?>" <?= ($Tipo->id == $model->id_Tipo) ? 'selected' : " " ?>>
+                        <?= $Tipo->nome ?>
+                    </option>
                     <?php endforeach ?>
                 </select>
             </div>
 
             <div class="container-fluid input-container">
                 <h4>Ano Fabricado:</h4>
-                <input name="Ano" id="Ano" type="year" class="form-control" placeholder="1999" value="<?= $model->Ano ?>">
+                <input name="Ano" id="Ano" type="year" class="form-control" placeholder="1999"
+                    value="<?= $model->Ano ?>">
             </div>
 
             <div class="container-fluid input-container">
                 <h4>Combustivel:</h4>
                 <select class="form-control" name="Combustivel">
                     <?php foreach ($model->Lista_Combustivel as $Combustivel) : ?>
-                        <option value="<?= $Combustivel->id ?>" <?= ($Combustivel->id == $model->id_Combustivel) ? 'selected' : " " ?>>
-                            <?= $Combustivel->nome ?>
-                        </option>
+                    <option value="<?= $Combustivel->id ?>"
+                        <?= ($Combustivel->id == $model->id_Combustivel) ? 'selected' : " " ?>>
+                        <?= $Combustivel->nome ?>
+                    </option>
                     <?php endforeach ?>
                 </select>
             </div>
 
             <div class="container-fluid input-container">
                 <h4>Cor</h4>
-                <input name="Cor" id="Cor" type="text" class="form-control" placeholder="Digite a cor do veiculo" value="<?= $model->Cor ?>">
+                <input name="Cor" id="Cor" type="text" class="form-control" placeholder="Digite a cor do veiculo"
+                    value="<?= $model->Cor ?>">
             </div>
             <div class="container-fluid input-container">
                 <div class="form-row numero_chassi">
                     <div class="form-group col-xs-12 col-md-5">
                         <h4>Numero de Chassi:</h4>
-                        <input name="NumeroChassi" id="NumeroChassi" type="text" class="form-control" placeholder="Digite o chassi do veiculo" value="<?= $model->NumeroChassi ?>">
+                        <input name="NumeroChassi" id="NumeroChassi" type="text" class="form-control"
+                            placeholder="Digite o chassi do veiculo" value="<?= $model->NumeroChassi ?>">
                     </div>
 
 
                     <div class="form-group col-md-5 kilometragem">
                         <h4>Kilometragem:</h4>
-                        <input name="Kilometragem" id="Kilometragem" type="number" class="form-control" placeholder="Digite o KM" value="<?= $model->Kilometragem ?>">
+                        <input name="Kilometragem" id="Kilometragem" type="number" class="form-control"
+                            placeholder="Digite o KM" value="<?= $model->Kilometragem ?>">
                     </div>
                 </div><br>
 
                 <div class="container-fluid input-container">
                     <div class="form-check">
-                        <input name="Revisao" id="Revisao" type="checkbox" class="form-check-input" value="<?= $model->Revisao ?>">
+                        <input name="Revisao" id="Revisao" type="checkbox" class="form-check-input"
+                            value="<?= $model->Revisao ?>">
                         <label class="form-check-label" for="check1">Revisão</label>
                     </div>
 
                     <div class="form-check">
-                        <input name="Sinistro" id="Sinistro" type="checkbox" class="form-check-input" value="<?= $model->Sinistro ?>">
+                        <input name="Sinistro" id="Sinistro" type="checkbox" class="form-check-input"
+                            value="<?= $model->Sinistro ?>">
                         <label class="form-check-label" for="check2">Sinistro</label>
                     </div>
 
                     <div class="form-check">
-                        <input name="Roubo_Furto" id="Roubo_Furto" type="checkbox" class="form-check-input" value="<?= $model->Roubo_Furto ?>">
+                        <input name="Roubo_Furto" id="Roubo_Furto" type="checkbox" class="form-check-input"
+                            value="<?= $model->Roubo_Furto ?>">
                         <label class="form-check-label" for="check3">Roubo/Furto</label>
                     </div>
 
                     <div class="form-check">
-                        <input name="Aluguel[]" id="Aluguel" type="checkbox" class="form-check-input" value="<?= $model->Aluguel ?>">
+                        <input name="Aluguel[]" id="Aluguel" type="checkbox" class="form-check-input"
+                            value="<?= $model->Aluguel ?>">
                         <label class="form-check-label" for="check4">Aluguel</label>
                     </div>
 
                     <div class="form-check">
-                        <input name="Venda" id="Venda" type="checkbox" class="form-check-input" value="<?= $model->Venda ?>">
+                        <input name="Venda" id="Venda" type="checkbox" class="form-check-input"
+                            value="<?= $model->Venda ?>">
                         <label class="form-check-label" for="check4">Venda</label>
                     </div>
 
                     <div class="form-check">
-                        <input name="Particular" id="Particular" type="checkbox" class="form-check-input" <?= ($model->Particular == 1) ? 'checked' : '' ?> value="<?= $model->Particular ?>">
+                        <input name="Particular" id="Particular" type="checkbox" class="form-check-input"
+                            <?= ($model->Particular == 1) ? 'checked' : '' ?> value="<?= $model->Particular ?>">
                         <label class="form-check-label" for="check4">Particular</label>
                     </div>
                 </div>
 
                 <div class="container-fluid observacoes">
                     <h4>Observações:</h4>
-                    <input name="Observacoes" id="Observacoes" type="text" class="form-control" value="<?= $model->Observacoes ?>">
+                    <input name="Observacoes" id="Observacoes" type="text" class="form-control"
+                        value="<?= $model->Observacoes ?>">
                 </div>
 
                 <div class="container-fluid button">
@@ -140,7 +153,8 @@
                         Cadastrar
                     </button>
 
-                    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -162,6 +176,7 @@
                     </div>
                 </div>
             </div>
+
     </form>
 </body>
 

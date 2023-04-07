@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/../../css/estilo_listaVeiculo.css">
+  <link rel="stylesheet" href="../css/estilo_listaVeiculo.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+  
   <title>Lista Veiculos</title>
 </head>
 
@@ -17,6 +17,8 @@
 
   <table>
     <tr>
+      <th></th>
+      <th></th>
       <th>Marca</th>
       <th>Modelo</th>
       <th>Fabricante</th>
@@ -30,6 +32,8 @@
     </tr>
     <tr>
       <?php foreach ($model->rows as $item) : ?>
+        <td> <a href="/veiculo/form?id=<?= $item->id ?>"><i class='bx bxs-edit'></i></a></td>
+        <td> <a href="/veiculo/delete?id=<?= $item->id ?>"><i class='bx bx-trash'></i></a></td>
         <td> <?= $item->Marca ?> </td>
         <td> <?= $item->Modelo ?></td>
         <td> <?= $item->Fabricante ?></td>
@@ -39,7 +43,6 @@
         <td> <?= $item->Cor ?></td>
         <td> <?= $item->NumeroChassi ?></td>
         <td> <?= $item->Kilometragem ?></td>
-        <td> <a href="/veiculo/delete?id=<?= $item->id ?>"><i class='bx bx-trash'></i></a></td>
     </tr>
 
   <?php endforeach ?>
