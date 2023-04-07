@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <?php include 'View/modules/Pagina_Inicial/home.php' ?>
+<?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
     <form action="/combustivel/save" method="post">
 

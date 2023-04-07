@@ -12,7 +12,7 @@
 
 <body>
 
-    <?php include 'View/modules/Pagina_Inicial/home.php' ?>
+<?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
 
     <table>
