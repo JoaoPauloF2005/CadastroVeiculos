@@ -35,29 +35,26 @@
             <th>KM</th>
           </tr>
         </thead>
-</tbody>
-        <tr>
-          <?php foreach ($model->rows as $item) : ?>
-            <td class="botao_delete"><a href="/veiculo/delete?id=<?= $item->id ?>"><i class='bx bx-trash'></i></a></td>
-            <td> <a href="/veiculo/form?id=<?= $item->id ?>"><i class='bx bxs-edit'></i></a></td>
-            <td> <?= $item->Marca ?> </td>
-            <td> <?= $item->Modelo ?></td>
-            <td> <?= $item->Fabricante ?></td>
-            <td> <?= $item->Tipo ?></td>
-            <td> <?= $item->Ano ?></td>
-            <td> <?= $item->Combustivel ?></td>
-            <td> <?= $item->Cor ?></td>
-            <td> <?= $item->NumeroChassi ?></td>
-            <td> <?= $item->Kilometragem ?></td>
-        </tr>
+        <tbody>
+          <tr>
+            <?php foreach ($model->rows as $item) : ?>
+              <td id="icon_delete"> <a href="/veiculo/delete?id=<?= $item->id ?>"><i class='bx bx-trash'></i></a></td>
+              <td id="icon_edit"> <a href="/veiculo/form?id=<?= $item->id ?>"><i class='bx bxs-edit'></i></a></td>
+              <td> <?= $item->Marca ?> </td>
+              <td> <?= $item->Modelo ?></td>
+              <td> <?= $item->Fabricante ?></td>
+              <td> <?= $item->Tipo ?></td>
+              <td> <?= $item->Ano ?></td>
+              <td> <?= $item->Combustivel ?></td>
+              <td> <?= $item->Cor ?></td>
+              <td> <?= $item->NumeroChassi ?></td>
+              <td> <?= $item->Kilometragem ?></td>
+          </tr>
 
-      <?php endforeach ?>
+        <?php endforeach ?>
 
-      <?php if (count($model->rows) == 0) : ?>
-        <tr>
-          <td colspan="5">Nenhum registro encontrado.</td>
-        </tr>
-      <?php endif ?>
+
+        </tbody>
       </table>
     </div>
   </div>
