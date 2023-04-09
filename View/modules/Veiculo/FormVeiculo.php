@@ -40,7 +40,7 @@
 
             <div class="container-fluid input-container">
                 <h4>Fabricante:</h4>
-                <select class="form-control" name="Fabricante"></select>
+                <select class="form-control" name="Fabricante">
                     <?php foreach ($model->Lista_Fabricante as $Fabricante) : ?>
                         <option value="<?= $Fabricante->id ?>" <?= ($Fabricante->id == $model->id_Fabricante) ? 'selected' : " " ?>>
                             <?= $Fabricante->nome ?>

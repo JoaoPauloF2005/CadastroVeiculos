@@ -22,3 +22,10 @@
   font-size: 20px;
   color: inherit;
 }
+
+.box-search{
+ display: flex; 
+ justify-content: center;
+ gap: .1%;
+ width: 50%;
+}
