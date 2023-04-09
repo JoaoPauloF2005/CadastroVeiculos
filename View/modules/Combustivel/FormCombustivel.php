@@ -1,3 +1,11 @@
+<?php
+
+if(isset($_POST['submit'])) {
+    $Combustivel = $_POST['nome']; 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

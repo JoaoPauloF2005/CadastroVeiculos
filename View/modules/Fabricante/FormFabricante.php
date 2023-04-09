@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-<?php include 'Includes/navbar.php' ?>
+<?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
     <form action="/fabricante/save" method="post">
 
