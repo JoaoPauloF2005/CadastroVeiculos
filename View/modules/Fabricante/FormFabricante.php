@@ -19,12 +19,12 @@
     <form action="/fabricante/save" method="post">
 
         <center>
-            <h1> Cadastro de Combustivel </h1>
+            <h1> Cadastro de Fabricante </h1>
         </center>
 <br><br>
         <div class="container">
             <div class="container-fluid input-container">
-               <center><h3>Combustivel:</h3></center> 
+               <center><h3>Fabricante:</h3></center> 
                 <input type="hidden" value="<?= $model->id ?>" name="id" />
                 <input name="nome" id="nome" type="text" class="form-control" placeholder="Digite o fabricante" value="<?= $model->nome ?>">
             </div>
