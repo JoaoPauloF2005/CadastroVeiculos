@@ -46,7 +46,7 @@
         <table class="table text-white table-bg">
           <thead>
             <tr class="col-sm">
-              <th scope="col">id</th>
+              <th scope="col">ID</th>
               <th scope="col">Marca</th>
               <th scope="col">Modelo</th>
               <th scope="col">Fabricante</th>
