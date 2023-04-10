@@ -107,6 +107,7 @@ $Veiculo = $sql;
     </div>
   </div>
 
+
   <div class="modal fade" id="#modalListaInformacoes" tabindex="-1" role="dialog" aria-labelledby="#modalListaInformacoesLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -143,9 +144,7 @@ $Veiculo = $sql;
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLongTitle">Detalhes:</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <h2 class="modal-title" id="exampleModalLongTitle">Detalhes:</h2>
           </button>
         </div>
         <div class="modal-body">
@@ -154,23 +153,56 @@ $Veiculo = $sql;
               <div class="input-container">
                 <label class="container" for="Revisao">Revisão: </label><br>
                 <input type="checkbox" disabled class="form-check-input" name="Revisao" id="Revisao" checked="checked" <?= ($Veiculo->Revisao == 1) ? 'checked' : "" ?>>
-                <span class="checkmark">
               </div>
-            </div>
-          </div>
 
-          <div class="input-container">
+              <br>
+              <div class="input-container">
                 <label for="Sinistro">Sinistro: </label><br>
                 <input type="checkbox" disabled class="form-check-input" name="Sinistro" id="Sinistro" <?= ($Veiculo->Sinistro == 1) ? 'checked' : "" ?>>
               </div>
             </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+
+            <br>
+            <div class="form-container-aside">
+              <div class="input-container">
+                <Label class="container" form="Roubo_Furto">Roubo/Furto:</Label></br>
+                <input type="checkbox" disabled class="form-check-input" name="Roubo_Furto" id="Roubo_Furto" checked="checked" <?= ($Veiculo->Roubo_Furto == 1) ? 'checked' : "" ?>>
+              </div>
+              <br>
+              <div class="input-container">
+                <Label class="container" form="Aluguel">Aluguel:</Label></br>
+                <input type="checkbox" disabled class="form-check-input" name="Aluguel" id="Aluguel" checked="checked" <?= ($Veiculo->Aluguel == 1) ? 'checked' : "" ?>>
+              </div>
+              <br>
+              <div class="input-container">
+                <Label class="container" form="Particular">Particular:</Label></br>
+                <input type="checkbox" disabled class="form-check-input" name="Particular" id="Particular" checked="checked" <?= ($Veiculo->Particular == 1) ? 'checked' : "" ?>>
+              </div>
+            </div>
+            <br>
+
+            <center>
+            <div class="container-fluid">
+              <table class="table_obs">
+                <thead>
+                  <th>Observação:</th>
+                </thead>
+                <tbody>
+                  <td><?= $Veiculo->Observacoes ?></td>
+                </tbody>
+              </table>
+            </div>
+            </center>
           </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
+  </div>
+
 </body>
 
 

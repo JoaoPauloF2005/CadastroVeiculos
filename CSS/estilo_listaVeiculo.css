@@ -4,7 +4,10 @@
   
 }
 
-
+.observacao{
+  float: left;
+  width: 10%;
+}
 
 #icon_delete{
   margin: 10px;
