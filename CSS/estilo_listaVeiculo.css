@@ -37,6 +37,3 @@ body{
   text-align: center;
 }
 
-.input-container:checked ~ .checkmark{
-  background-color: #000000;
-}
