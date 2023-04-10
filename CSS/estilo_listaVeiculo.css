@@ -21,10 +21,9 @@
 }
 
 .box-search{
- display: flex; 
+  
  justify-content: center;
- gap: .1%;
- width: 100%;
+ width: 50%;
 }
 
 .table-bg{
@@ -37,3 +36,8 @@ body{
   text-align: center;
 }
 
+.container > .box-search > form {
+  display: flex;
+  flex-direction: row;
+  gap: .5%;
+}

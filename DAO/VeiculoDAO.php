@@ -117,7 +117,8 @@ class VeiculoDAO extends DAO
         JOIN Marca m ON (m.id = v.id_Marca)
         JOIN Fabricante f ON (f.id = v.id_Fabricante)
         JOIN Tipo t ON (t.id = v.id_Tipo)
-        JOIN Combustivel c ON (c.id = v.id_Combustivel) WHERE v.Modelo LIKE ? OR m.nome LIKE ? ";
+        JOIN Combustivel c ON (c.id = v.id_Combustivel) WHERE v.id_Marca LIKE ? OR m.nome LIKE ?
+";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $q);

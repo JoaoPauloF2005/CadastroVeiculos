@@ -1,0 +1,43 @@
+.table-responsive{
+   width: 25%;
+    text-align: center;
+    
+  }
+  
+  .observacao{
+    float: left;
+    width: 10%;
+  }
+  
+  #icon_delete{
+    margin: 10px;
+    width: 50px;
+    font-size: 20px;
+  }
+  
+  #icon_edit{
+    font-size: 20px;
+    color: inherit;
+  }
+  
+  .box-search{
+    
+   justify-content: center;
+   width: 50%;
+  }
+  
+  .table-bg{
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+  }
+  
+  body{
+    color: white;
+    text-align: center;
+  }
+  
+  .container > .box-search > form {
+    display: flex;
+    flex-direction: row;
+    gap: .5%;
+  }
