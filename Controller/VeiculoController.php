@@ -66,4 +66,13 @@ class VeiculoController extends Controller
 
         header("Location: /veiculo");
     }
+
+    public static function buscar(){
+        $model = new VeiculoModel();
+
+        if(isset($_GET['search']))
+            $model->buscar($_GET['search']);
+
+        parent::render('Veiculo/ListaVeiculo', $model);
+    }
 }

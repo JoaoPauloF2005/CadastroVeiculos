@@ -1,17 +1,3 @@
-<?php
-include_once('config.php');
-
-if (!empty($_GET['search'])) {
-  $data = $_GET['search'];
-  $sql = "SELECT * FROM Veiculo WHERE Marca LIKE '%$data%' or Modelo LIKE '%$data%' or Fabricante LIKE '%$data%' ORDER BY id DESC";
-} else {
-  $sql = "SELECT * FROM Veiculo ORDER BY id DESC";
-}
-
-$Veiculo = $sql;
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -39,12 +25,15 @@ $Veiculo = $sql;
   <center>
     <div class="container">
       <div class="box-search">
-        <input type="search" class="form-control w-25" placeholder="Pesquisar" id="Pesquisar">
-        <button onclick="searchData()" class="btn btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-          </svg>
-        </button>
+        <form action="/veiculo/buscar" method="GET">
+          <input type="search" class="form-control w-25" placeholder="Pesquisar" id="Pesquisar" name="search">
+          <button class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </button>
+        </form>
+
       </div>
     </div>
   </center>
@@ -108,35 +97,6 @@ $Veiculo = $sql;
   </div>
 
 
-  <div class="modal fade" id="#modalListaInformacoes" tabindex="-1" role="dialog" aria-labelledby="#modalListaInformacoesLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="#modalListaInformacoesLabel">New message</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <form>
-            <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Recipient:</label>
-              <input type="text" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <!-- Modal -->
@@ -152,7 +112,7 @@ $Veiculo = $sql;
             <div class="form-container-aside">
               <div class="input-container">
                 <label class="container" for="Revisao">Revisão: </label><br>
-                <input type="checkbox" disabled class="form-check-input" name="Revisao" id="Revisao" checked="checked" <?= ($Veiculo->Revisao == 1) ? 'checked' : "" ?>>
+                <input type="checkbox" disabled class="form-check-input" name="Revisao" id="Revisao" <?= ($Veiculo->Revisao == 1) ? 'checked' : "" ?>>
               </div>
 
               <br>
@@ -166,32 +126,32 @@ $Veiculo = $sql;
             <div class="form-container-aside">
               <div class="input-container">
                 <Label class="container" form="Roubo_Furto">Roubo/Furto:</Label></br>
-                <input type="checkbox" disabled class="form-check-input" name="Roubo_Furto" id="Roubo_Furto" checked="checked" <?= ($Veiculo->Roubo_Furto == 1) ? 'checked' : "" ?>>
+                <input type="checkbox" disabled class="form-check-input" name="Roubo_Furto" id="Roubo_Furto" <?= ($Veiculo->Roubo_Furto == 1) ? 'checked' : "" ?>>
               </div>
               <br>
               <div class="input-container">
                 <Label class="container" form="Aluguel">Aluguel:</Label></br>
-                <input type="checkbox" disabled class="form-check-input" name="Aluguel" id="Aluguel" checked="checked" <?= ($Veiculo->Aluguel == 1) ? 'checked' : "" ?>>
+                <input type="checkbox" disabled class="form-check-input" name="Aluguel" id="Aluguel" <?= ($Veiculo->Aluguel == 1) ? 'checked' : "" ?>>
               </div>
               <br>
               <div class="input-container">
                 <Label class="container" form="Particular">Particular:</Label></br>
-                <input type="checkbox" disabled class="form-check-input" name="Particular" id="Particular" checked="checked" <?= ($Veiculo->Particular == 1) ? 'checked' : "" ?>>
+                <input type="checkbox" disabled class="form-check-input" name="Particular" id="Particular" <?= ($Veiculo->Particular == 1) ? 'checked' : "" ?>>
               </div>
             </div>
             <br>
 
             <center>
-            <div class="container-fluid">
-              <table class="table_obs">
-                <thead>
-                  <th>Observação:</th>
-                </thead>
-                <tbody>
-                  <td><?= $Veiculo->Observacoes ?></td>
-                </tbody>
-              </table>
-            </div>
+              <div class="container-fluid">
+                <table class="table_obs">
+                  <thead>
+                    <th>Observação:</th>
+                  </thead>
+                  <tbody>
+                    <td><?= $Veiculo->Observacoes ?></td>
+                  </tbody>
+                </table>
+              </div>
             </center>
           </div>
         </div>
@@ -205,20 +165,5 @@ $Veiculo = $sql;
 
 </body>
 
-
-
-<script>
-  var search = document.getElementById('Pesquisar');
-
-  search.addEventListener("keydown", function(event) {
-    if (event === "Enter") {
-      searchData();
-    }
-  });
-
-  function searchData() {
-    window.location = 'veiculo?search=' + search.value;
-  }
-</script>
 
 </html>

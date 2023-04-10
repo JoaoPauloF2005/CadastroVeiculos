@@ -21,7 +21,7 @@ class VeiculoDAO extends DAO
                  Sinistro, Roubo_Furto, Aluguel, Venda, Particular, Observacoes, id_Marca, id_Fabricante, 
                  id_Tipo, id_Combustivel)
                  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->Modelo);
@@ -41,7 +41,6 @@ class VeiculoDAO extends DAO
         $stmt->bindValue(15, $model->id_Tipo);
         $stmt->bindValue(16, $model->id_Combustivel);
         $stmt->execute();
-
     }
 
     public function update(VeiculoModel $model)
@@ -85,7 +84,7 @@ class VeiculoDAO extends DAO
         $stmt = $this->conexao->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS);
-    } 
+    }
 
     public function selectByid(int $id)
     {
@@ -98,13 +97,34 @@ class VeiculoDAO extends DAO
         JOIN Tipo t ON (t.id = v.id_Tipo)
         JOIN Combustivel c ON (c.id = v.id_Combustivel)
         WHERE v.id=?";
-                
+
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt->fetchObject("CadastroVeiculos\Model\VeiculoModel"); 
+        return $stmt->fetchObject("CadastroVeiculos\Model\VeiculoModel");
+    }
+
+    public function search($q)
+    {
+        $query = '%' . $q . '%';
+
+        $sql = "SELECT v.id, v.Modelo, v.Ano, v.NumeroChassi, v.Cor, v.Kilometragem, v.Revisao, v.Sinistro, 
+        v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
+        m.nome AS Marca, f.nome AS Fabricante, t.nome AS Tipo, c.nome AS Combustivel
+        FROM Veiculo v
+        JOIN Marca m ON (m.id = v.id_Marca)
+        JOIN Fabricante f ON (f.id = v.id_Fabricante)
+        JOIN Tipo t ON (t.id = v.id_Tipo)
+        JOIN Combustivel c ON (c.id = v.id_Combustivel) WHERE v.Modelo LIKE ? OR m.nome LIKE ? ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $q);
+        $stmt->bindValue(2, $q);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
     public function delete(int $id)

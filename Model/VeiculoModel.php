@@ -32,6 +32,12 @@ class VeiculoModel extends Model
         }
     }
 
+    public function buscar($query){
+        $dao = new VeiculoDAO();
+
+        $this->rows = $dao->search($query);
+    }
+
     public function getAllMarca()
     {
        
@@ -45,6 +51,8 @@ class VeiculoModel extends Model
         
         return $dao->select();
     }
+
+
     
 
     public function getAllTipo()
