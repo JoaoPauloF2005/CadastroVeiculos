@@ -62,7 +62,7 @@
 
             <div class="container-fluid input-container">
                 <h4>Ano Fabricado:</h4>
-                <input name="Ano" id="Ano" type="year" class="form-control" placeholder="1999" value="<?= $model->Ano ?>" required>
+                <input name="Ano" id="Ano" type="year" class="form-control" placeholder="1999"  minlength="4" maxlength="4" <?= $model->Ano ?>" required>
             </div>
 
             <div class="container-fluid input-container">
