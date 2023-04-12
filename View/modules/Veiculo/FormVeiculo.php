@@ -18,7 +18,9 @@
 
     <?php include 'View/modules/Pagina_Inicial/home.php' ?>
 
-    <center><h2 class="text">Cadastre seu veiculo aqui:</h2></center>
+    <center>
+        <h2 class="text">Cadastre seu veiculo aqui:</h2>
+    </center>
     <form class="form-horizontal" action="/veiculo/save" method="post">
 
         <div class="container">
@@ -62,7 +64,7 @@
 
             <div class="container-fluid input-container">
                 <h4>Ano Fabricado:</h4>
-                <input name="Ano" id="Ano" type="year" class="form-control" placeholder="1999"  minlength="4" maxlength="4" <?= $model->Ano ?>" required>
+                <input name="Ano" id="Ano" type="year" class="form-control" placeholder="1999" minlength="4" maxlength="4" <?= $model->Ano ?>" required>
             </div>
 
             <div class="container-fluid input-container">
@@ -94,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
             <div class="container-fluid input-container">
 
@@ -138,6 +140,7 @@
 
             <br>
 
+          
                 <div class="container-fluid input-container">
                     <div class="text-box">
                         <a href="#" class="btn_cad btn-white btn-animate" data-toggle="modal" data-target="#modalExemplo">Cadastrar</a>
@@ -164,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-
+         
         </div>
 
     </form>

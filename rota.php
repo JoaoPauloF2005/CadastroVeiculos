@@ -8,103 +8,105 @@ use CadastroVeiculos\Controller\VeiculoController;
 
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-switch($uri_parse)
-{
+switch ($uri_parse) {
     case '/home':
         include 'View/modules/Pagina_Inicial/home.php';
-    break;
+        break;
 
-     case '/marca':
+    case '/marca':
         MarcaController::index();
-    break;
+        break;
 
     case '/marca/form':
         MarcaController::form();
-    break;
+        break;
 
     case '/marca/save':
         MarcaController::save();
-    break;
+        break;
 
     case '/marca/delete':
         MarcaController::delete();
-    break;
+        break;
 
-    
+
     case '/fabricante':
         FabricanteController::index();
-    break;
+        break;
 
     case '/fabricante/form':
         FabricanteController::form();
-    break;
+        break;
 
     case '/fabricante/save':
         FabricanteController::save();
-    break;
+        break;
 
     case '/fabricante/delete':
         FabricanteController::delete();
-    break;
+        break;
 
 
     case '/tipo':
         TipoController::index();
-    break;
+        break;
 
     case '/tipo/form':
         TipoController::form();
-    break;
+        break;
 
     case '/tipo/save':
         TipoController::save();
-    break;
+        break;
 
     case '/tipo/delete':
         TipoController::delete();
-    break;
+        break;
 
 
     case '/combustivel':
         CombustivelController::index();
-    break;
+        break;
 
     case '/combustivel/form':
         CombustivelController::form();
-    break;
+        break;
 
     case '/combustivel/save':
         CombustivelController::save();
-    break;
+        break;
 
     case '/combustivel/delete':
         CombustivelController::delete();
-    break;
+        break;
 
+    case '/combustivel/buscar':
+        CombustivelController::buscar();
+        break;
 
     case '/veiculo':
         VeiculoController::index();
-    break;
+        break;
 
     case '/veiculo/form':
         VeiculoController::form();
-    break;
+        break;
 
     case '/veiculo/save':
         VeiculoController::save();
-    break;
+        break;
 
     case '/veiculo/delete':
         VeiculoController::delete();
-    break;
+        break;
     case '/veiculo/buscar':
         VeiculoController::buscar();
-    break;
-        
+        break;
+
 
 
 
     default:
         echo 'Erro 404';
-    break;
+        break;
 }

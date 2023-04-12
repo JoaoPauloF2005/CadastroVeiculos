@@ -46,4 +46,13 @@ class CombustivelController extends Controller
 
         header("Location: /combustivel");
     }
+
+    public static function buscar(){
+        $model = new CombustivelModel();
+
+        if(isset($_GET['search']))
+            $model->buscar($_GET['search']);
+
+        parent::render('Combustivel/ListaCombustivel', $model);
+    }
 }

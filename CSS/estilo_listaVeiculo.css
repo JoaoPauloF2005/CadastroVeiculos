@@ -1,6 +1,7 @@
-.table{
-  
-  text-align: left;
+
+
+.table-responsive{
+  width: 75%;
   
 }
 
@@ -23,20 +24,16 @@
 .box-search{
   
  justify-content: center;
- width: 50%;
+ width: 25%;
 }
 
-.table-bg{
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
+.input-container > .th > .td{
+  font-size: 10px;
 }
 
-body{
-  color: white;
-  text-align: center;
-}
 
-.container > .box-search > form {
+
+.container-fluid > .box-search > form {
   display: flex;
   flex-direction: row;
   gap: .5%;

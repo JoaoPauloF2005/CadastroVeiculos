@@ -38,6 +38,11 @@ class CombustivelModel extends Model
         return ($obj) ? $obj : new CombustivelModel();
     }
 
+    public function buscar($query){
+        $dao = new CombustivelDAO();
+
+        $this->rows = $dao->search($query);
+    }
     public function delete(int $id)
     {
         $dao = new CombustivelDAO();

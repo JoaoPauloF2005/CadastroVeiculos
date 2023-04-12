@@ -108,7 +108,7 @@ class VeiculoDAO extends DAO
 
     public function search($q)
     {
-        $query = '%' . $q . '%';
+        $q = '%' . $q . '%';
 
         $sql = "SELECT v.id, v.Modelo, v.Ano, v.NumeroChassi, v.Cor, v.Kilometragem, v.Revisao, v.Sinistro, 
         v.Roubo_Furto, v.Aluguel, v.Venda, v.Particular, v.Observacoes, 
@@ -117,12 +117,21 @@ class VeiculoDAO extends DAO
         JOIN Marca m ON (m.id = v.id_Marca)
         JOIN Fabricante f ON (f.id = v.id_Fabricante)
         JOIN Tipo t ON (t.id = v.id_Tipo)
-        JOIN Combustivel c ON (c.id = v.id_Combustivel) WHERE v.id_Marca LIKE ? OR m.nome LIKE ?
-";
+        JOIN Combustivel c ON (c.id = v.id_Combustivel) WHERE v.id LIKE ? OR m.nome LIKE ? OR v.Modelo LIKE ? OR f.nome LIKE ? OR t.nome LIKE ? OR v.Ano LIKE ? OR c.nome LIKE ? OR v.Cor LIKE ? 
+        OR v.NumeroChassi LIKE ? OR v.Kilometragem LIKE ? OR v.Observacoes LIKE ?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $q);
         $stmt->bindValue(2, $q);
+        $stmt->bindValue(3, $q);
+        $stmt->bindValue(4, $q);
+        $stmt->bindValue(5, $q);
+        $stmt->bindValue(6, $q);
+        $stmt->bindValue(7, $q);
+        $stmt->bindValue(8, $q);
+        $stmt->bindValue(9, $q);
+        $stmt->bindValue(10, $q);
+        $stmt->bindValue(11, $q);
         $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_CLASS);

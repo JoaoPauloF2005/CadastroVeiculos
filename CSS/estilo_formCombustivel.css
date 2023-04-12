@@ -1,3 +1,19 @@
+.input-container_combustivel{
+    width: 50%;
+}
+
+.text{
+    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  }
+
+.text-box{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+  
+
 .btn_cad{
     margin-left: 475px;
  }
