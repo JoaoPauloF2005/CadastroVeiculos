@@ -99,6 +99,7 @@ switch ($uri_parse) {
     case '/veiculo/delete':
         VeiculoController::delete();
         break;
+        
     case '/veiculo/buscar':
         VeiculoController::buscar();
         break;
