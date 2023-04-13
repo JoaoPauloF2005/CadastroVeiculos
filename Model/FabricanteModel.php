@@ -38,6 +38,12 @@ class FabricanteModel extends Model
         return ($obj) ? $obj : new FabricanteModel();
     }
 
+    public function buscar($query){
+        $dao = new FabricanteDAO();
+
+        $this->rows = $dao->search($query);
+    }
+
     public function delete(int $id)
     {
         $dao = new FabricanteDAO();

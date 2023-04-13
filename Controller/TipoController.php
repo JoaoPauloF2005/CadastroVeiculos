@@ -38,6 +38,15 @@ class TipoController extends Controller
         header("Location: /tipo");
     }
 
+    public static function buscar(){
+        $model = new TipoModel();
+
+        if(isset($_GET['search']))
+            $model->buscar($_GET['search']);
+
+        parent::render('Tipo/ListaTipo', $model);
+    }
+
     public static function delete()
     {
         $model = new TipoModel();

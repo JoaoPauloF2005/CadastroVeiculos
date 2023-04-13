@@ -38,6 +38,13 @@ class TipoModel extends Model
         return ($obj) ? $obj : new TipoModel();
     }
 
+    public function buscar($query){
+        $dao = new TipoDAO();
+
+        $this->rows = $dao->search($query);
+    }
+    
+
     public function delete(int $id)
     {
         $dao = new TipoDAO();

@@ -55,6 +55,22 @@ class MarcaDAO extends DAO
         return $stmt->fetchObject("CadastroVeiculos\Model\MarcaModel");
     }
 
+    public function search($q)
+    {
+        $q = '%' . $q . '%';
+
+        $sql = "SELECT id, nome 
+        FROM Marca 
+        WHERE id LIKE ? OR nome LIKE ? ";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $q);
+        $stmt->bindValue(2, $q);
+       
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function delete(int $id)
     {
         $sql = "DELETE FROM Marca WHERE id = ?";

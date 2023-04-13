@@ -55,6 +55,22 @@ class TipoDAO extends DAO
         return $stmt->fetchObject("CadastroVeiculos\Model\TipoModel");
     }
 
+    public function search($q)
+    {
+        $q = '%' . $q . '%';
+
+        $sql = "SELECT id, nome 
+        FROM Tipo 
+        WHERE id LIKE ? OR nome LIKE ? ";
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $q);
+        $stmt->bindValue(2, $q);
+       
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
+
     public function delete(int $id)
     {
         $sql = "DELETE FROM Tipo WHERE id = ?";

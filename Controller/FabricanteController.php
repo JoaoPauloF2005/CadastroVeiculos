@@ -46,4 +46,13 @@ class FabricanteController extends Controller
 
         header("Location: /fabricante");
     }
+
+    public static function buscar(){
+        $model = new FabricanteModel();
+
+        if(isset($_GET['search']))
+            $model->buscar($_GET['search']);
+
+        parent::render('Fabricante/ListaFabricante', $model);
+    }
 }

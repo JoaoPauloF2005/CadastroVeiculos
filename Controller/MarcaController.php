@@ -38,6 +38,16 @@ class MarcaController extends Controller
         header("Location: /marca");
     }
 
+    public static function buscar(){
+        $model = new MarcaModel();
+
+        if(isset($_GET['search']))
+            $model->buscar($_GET['search']);
+
+        parent::render('Marca/ListaMarca', $model);
+    }
+
+
     public static function delete()
     {
         $model = new MarcaModel();

@@ -43,6 +43,7 @@ class CombustivelModel extends Model
 
         $this->rows = $dao->search($query);
     }
+    
     public function delete(int $id)
     {
         $dao = new CombustivelDAO();

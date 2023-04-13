@@ -29,6 +29,9 @@ switch ($uri_parse) {
         MarcaController::delete();
         break;
 
+    case '/marca/buscar':
+        MarcaController::buscar();
+        break;
 
     case '/fabricante':
         FabricanteController::index();
@@ -46,6 +49,9 @@ switch ($uri_parse) {
         FabricanteController::delete();
         break;
 
+    case '/fabricante/buscar':
+        FabricanteController::buscar();
+        break;
 
     case '/tipo':
         TipoController::index();
@@ -63,6 +69,9 @@ switch ($uri_parse) {
         TipoController::delete();
         break;
 
+    case '/tipo/buscar':
+        MarcaController::buscar();
+            break;
 
     case '/combustivel':
         CombustivelController::index();
@@ -99,7 +108,7 @@ switch ($uri_parse) {
     case '/veiculo/delete':
         VeiculoController::delete();
         break;
-        
+
     case '/veiculo/buscar':
         VeiculoController::buscar();
         break;
