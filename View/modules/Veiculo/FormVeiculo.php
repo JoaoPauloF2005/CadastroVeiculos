@@ -16,7 +16,7 @@
 <body>
 
 
-    <?php include 'View/modules/Pagina_Inicial/home.php' ?>
+    <?php include 'View/modules/Pagina_Inicial/home.php'  ?>
 
     <center>
         <h2 class="text">Cadastre seu veiculo aqui:</h2>

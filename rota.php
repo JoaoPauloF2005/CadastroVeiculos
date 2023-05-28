@@ -5,6 +5,7 @@ use CadastroVeiculos\Controller\FabricanteController;
 use CadastroVeiculos\Controller\TipoController;
 use CadastroVeiculos\Controller\CombustivelController;
 use CadastroVeiculos\Controller\VeiculoController;
+use CadastroVeiculos\Controller\BackupController;
 
 $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -112,7 +113,15 @@ switch ($uri_parse) {
     case '/veiculo/buscar':
         VeiculoController::buscar();
         break;
+        
+# BACKUP e RESTORE 
+    case '/backup': 
+    BackupController::Backup(); 
+    break; 
 
+    case '/restore': 
+    BackupController::restoreBackup();
+    break;
 
 
 
