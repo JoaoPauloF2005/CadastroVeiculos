@@ -36,8 +36,18 @@
                             </ul>
                         </li>
 
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"> Backup <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/backup">Importar</a></li>
+                                <li><a href="/restore">Exportar</a></li>
+                                
+
+                            </ul>
+                        </li>
+
                         <li><a href="#">Nossos Serviços</a></li>
                         <li><a href="#">Contato</a></li>
+                        
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
@@ -54,5 +64,13 @@
         </div>
     </div>
 </div>
+
+<?php 
+if (isset($_GET['message'])) {
+    $message = $_GET['message'];
+    echo "<script>alert('{$message}');</script>";
+}
+?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+

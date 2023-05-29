@@ -121,7 +121,7 @@ switch ($uri_parse) {
 
     case '/restore': 
     BackupController::restoreBackup();
-    break;
+    break;
 
 
 
